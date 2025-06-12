@@ -1,1 +1,14 @@
 @charset "UTF-8";
+
+/*header*/
+header{
+	background-color: yellow;
+}
+
+body{
+	background-color: #F0E5B1;
+}
+
+footer{
+	background-color: yellow;
+}
