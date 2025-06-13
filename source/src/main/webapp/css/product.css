@@ -1,1 +1,20 @@
 @charset "UTF-8";
+
+body {
+	background-color: #faf2d6;
+	
+}
+
+.header {
+	background-color: #f8c471;
+	padding: 20px;
+	text-align: center;
+	
+
+}
+
+.footer {
+	background-color: #f8c471;
+	padding: 20px;
+	text-align: center;
+}

@@ -5,27 +5,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
 
 <!-- ここからヘッダー -->
-<h1>Order Maker<br>簡単登録！機能豊富</h1>
+<h1 class="header">Order Maker<br>簡単登録！機能豊富</h1>
 <!-- ここまでヘッダー -->
 
 <!-- ここからメイン -->
+<div class="login">
 <form>
     <table>
       <tr>
         <td>
-          <label>名前<br>
-          <input type="text" name="name">
+          <!-- <label>名前<br> -->
+          <input type="text" name="name" placeholder="名前">
           </label>
         </td>
       </tr>
       <tr>
         <td>
-          <label>パスワード<br>
-          <input type="password" name="password">
+         <!--  <label>パスワード<br> -->
+          <input type="password" name="password" placeholder="パスワード">
           </label>
         </td>
       </tr>
@@ -40,8 +42,8 @@
       	</td>
       </tr>
     </table>
-    
-<!-- ここからメイン -->
 </form>
+</div>
+<!-- ここまでメイン -->
 </body>
 </html>

@@ -1,1 +1,34 @@
 @charset "UTF-8";
+
+body {
+	background-color: #faf2d6;
+	
+}
+
+.header {
+	background-color: #f8c471;
+	padding: 20px;
+	text-align: center;
+	
+
+}
+
+.footer {
+	background-color: #f8c471;
+	padding: 20px;
+	text-align: center;
+}
+
+.quest {
+	text-align: center;
+	padding: 50px;
+}
+
+.btn {
+	padding: 60px 60px;
+}
+
+.result {
+	text-align: center;
+	padding: 15px;
+}

@@ -5,9 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/product.css">
 </head>
 <body>
 	<!-- ここからヘッダー -->
+	<div class="header">
+	<p>共通ヘッダーのところ</p>
+	</div>
 	<!-- ここまでヘッダー -->
 
 	<!-- ここからメイン -->
@@ -31,5 +35,11 @@
 	<input type="button" name="inCart" value="カートに追加">
 
 	<!-- ここまでメイン -->
+	
+	<!-- ここからフッター -->
+	<div class="footer">
+	<p>共通フッターのところ
+	</div>
+	<!-- ここまでフッター -->
 </body>
 </html>
