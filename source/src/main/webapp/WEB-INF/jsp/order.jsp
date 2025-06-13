@@ -5,15 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/user.css">
+<link rel="stylesheet" href="css/order.css">
 </head>
 <body>
-<header>
-<div style="display: flex;">
-  <div>OrderMaker</div>
-  <div style="margin-left: 2em;">注文確認</div>
-</div>
-</header>
-
 <table>
       <tr>
         <th>注文番号</th>
@@ -32,9 +27,5 @@
         <td>アップルパイ</td>
       </tr>
     </table>
-<footer>
-<input type="submit" name="moveHome" value="ホームメニュー">
-</footer>
-
 </body>
 </html>

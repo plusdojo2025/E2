@@ -9,26 +9,26 @@
 <link rel="stylesheet" href="css/recommendResult.css" />
 </head>
 <body>
-	<h1>オススメ結果はこちら</h1>
-	<div class="productDisplay">
+	<div class="product-display">
+	<h2>オススメ結果はこちら</h2>
 		<div class="product">
-			<div class="productPicture">
+			<div class="product-picture">
 				<img src="" alt="商品画像">
 			</div>
-			<div class="productInfo">
-				<p class="productName">商品名</p>
+			<div class="product-info">
+				<p class="product-name">商品名</p>
 				<p>商品説明</p>
-				<p class="productPrice">値段</p>
+				<p class="product-price">値段</p>
 			</div>
 		</div>
 		<div class="product">
-			<div class="productPicture">
+			<div class="product-picture">
 				<img src="" alt="商品画像">
 			</div>
-			<div class="productInfo">
-				<p class="productName">商品名</p>
+			<div class="product-info">
+				<p class="product-name">商品名</p>
 				<p>商品説明</p>
-				<p class="productPrice">値段</p>
+				<p class="product-price">値段</p>
 			</div>
 		</div>
 	</div>
