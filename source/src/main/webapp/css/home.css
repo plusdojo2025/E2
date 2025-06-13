@@ -1,14 +1,13 @@
 @charset "UTF-8";
 
-/*header*/
-header{
-	background-color: yellow;
-}
 
-body{
-	background-color: #F0E5B1;
-}
 
-footer{
-	background-color: yellow;
+
+
+.container{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px 0;
+	padding: 40px;
 }

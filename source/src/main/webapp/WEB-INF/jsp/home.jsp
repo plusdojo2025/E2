@@ -5,17 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>ホーム画面</title>
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/user.css">
 </head>
 <body>
 <header>
-<div style="display: flex;">
-  <div>OrderMaker</div>
-  <div style="margin-left: 2em;">ホーム画面</div>
-</div>
+<p class="left">OrderMaker</p>
+<p class="center">ホーム画面</p>
+<button class="modal-button right">☰</button>
 </header>
 
+<main>
+<div class=container>
 <input type="submit" name="openQR" value="QR表示">
+</div>
+<div class=container>
+<p>ちいかわ</p>
+</div>
+</main>
 
 <footer>
 <input type="submit" name="moveOrder" value="注文確認">
