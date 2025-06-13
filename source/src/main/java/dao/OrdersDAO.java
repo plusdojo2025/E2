@@ -10,7 +10,7 @@ import java.util.List;
 
 import dto.Order;
 
-public class OrdersDAO {
+public class OrdersDAO extends SuperDAO{
 	
 	public List<Order> getOrderData(int orderId){
 		

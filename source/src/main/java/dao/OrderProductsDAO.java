@@ -9,9 +9,9 @@ import java.util.List;
 
 import dto.OrderProduct;
 
-public class OrderProductsDAO {
+public class OrderProductsDAO extends SuperDAO{
 	
-	public List<OrderProduct> getorderProductData(int orderProductId){
+	public List<OrderProduct> getOrderProductData(int orderProductId){
 		
 		List<OrderProduct> orderProductList = new ArrayList<OrderProduct>();
 

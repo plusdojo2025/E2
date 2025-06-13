@@ -4,13 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import dto.Product;
 
-public class ProductsDAO {
+public class ProductsDAO extends SuperDAO{
 	
 	public List<Product> getProductData(int productId){
 		
@@ -63,5 +64,111 @@ public class ProductsDAO {
 				}
 			}
 		}
+	}
+	
+	//商品登録
+	public boolean insert(int userId, String productName, int price, int isSoldOut, int allergy, String productDetail, String imageUrl) {
+
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e2?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+
+			// SQL文を準備する
+			String sql = "INSERT INTO users (user_id, product_name, price, is_sold_out, allergy, product_detail, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+			pStmt.setInt(1, userId);
+			pStmt.setString(2, productName);
+			pStmt.setInt(3, price);
+			pStmt.setInt(4, isSoldOut);
+			pStmt.setInt(5, allergy);
+			pStmt.setString(6, productDetail);
+			pStmt.setString(7, imageUrl);
+			
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+	
+	//商品情報のアップデート
+	public boolean updateConfig(int productId, String productName, int price, int isSoldOut, int allergy, String productDetail, String imageUrl) {
+
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e2?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+
+			// SQL文を準備する
+			String sql = "UPDATE users SET product_name = ?, price = ?, is_sold_out = ?, allergy = ?, product_detail = ?, image_url = ? WHERE product_id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+			pStmt.setString(1, productName);
+			pStmt.setInt(2, price);
+			pStmt.setInt(3, isSoldOut);
+			pStmt.setInt(4, allergy);
+			pStmt.setString(5, productDetail);
+			pStmt.setString(6, imageUrl);
+			pStmt.setInt(7, productId);
+			
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
 	}
 }
