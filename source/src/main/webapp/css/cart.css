@@ -1,1 +1,27 @@
 @charset "UTF-8";
+
+.sum-price{
+	text-align: right;
+	}
+.payMent{
+	display: flex;
+	justify-content: center;
+}
+.price{
+	text-align: right;
+}
+.productInfomation{
+	text-align: left;
+}
+input[type="submit"]{
+	width: 23vw;
+	height: 4vw;
+	background-color: white;
+	color: black;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}

@@ -1,1 +1,11 @@
 @charset "UTF-8";
+
+.number{
+	text-align: center;
+}
+.message{
+	padding: 10px;
+	width: 20vw;
+	margin: auto auto;
+	border: 1px solid black;
+}

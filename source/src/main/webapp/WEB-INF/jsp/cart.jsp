@@ -5,28 +5,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 	<header></header>
-	<span class="cartProductDisplay">商品名</span>
+	<div class="productInfomation">
+		<span>商品画像</span> <span class="cartProductDisplay">商品名</span>
+	</div>
 	<!--<a id="minus" class="number-control">-</a>
 <input type="number" id="number" value="1" max="99" min="1"/>
 <a id="plus" class="number-control">+</a>-->
- <button type="button" name="button" class="btn-minus">
-		<img src="">
-	</button>
-	<input type="number" min="0" max="99">
-	<button type="button" name="button" class="btn-plus">
-		<img src="">
-	</button> 
-	<span>商品価格</span>
+	<div class="price">
+		<!--  --><button type="button" name="button" class="btn-minus">
+			<img src="">
+		</button>
+		<input type="number" min="0" max="99">
+		<button type="button" name="button" class="btn-plus">
+			<img src="">
+		</button>
+		<span>商品価格</span>
+	</div>
 	<br>
-
-	<p>
-		合計￥ <span class="totalMonetary">0000</span>
-	</p>
+	<div class="sum-price">
+		<p>
+			合計&emsp;&emsp;￥&nbsp;<span class="totalMonetary">0000</span>
+		</p>
+	</div>
 	<form>
-		<input type="submit" value="支払画面へ">
+		<div class="payMent">
+			<input type="submit" value="支払画面へ">
+		</div>
 	</form>
 	<footer></footer>
 </body>
