@@ -9,10 +9,12 @@
 </head>
 <body>
 <header>
-<p class="left">OrderMaker</p>
-<p class="center">ホーム画面</p>
-<button class="modal-button right">☰</button>
+<p class="header-p header-left">OrderMaker</p>
+<p class="header-p header-center">ホーム画面</p>
+<button class="modal-button header-right">☰</button>
 </header>
+
+
 
 <main>
 <div class=container>
@@ -23,8 +25,10 @@
 </div>
 </main>
 
+
+
 <footer>
-<input type="submit" name="moveOrder" value="注文確認">
+<input type="submit" name="moveOrder" value="注文確認" class="footer-center">
 </footer>
 
 </body>

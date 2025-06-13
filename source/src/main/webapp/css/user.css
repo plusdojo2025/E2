@@ -12,9 +12,10 @@ header{
 	position: fixed;
     top: 0;
     left: 0;
+    display: flex;
     width: 100%;
-	background-color: green;
-	height: 60px;
+	background-color: #3a7d23;
+	height: 4vw;
 }
 
 
@@ -24,7 +25,7 @@ header{
 }*/
 
 main{
-	padding-top: 60px;
+	padding-top: 4vw;
 }
 
 footer{
@@ -32,7 +33,7 @@ footer{
     bottom: 0;
     left: 0;
     width: 100%;
-	background-color: green;
+	background-color: #3a7d23;
 	padding: 30px;
 }
 
@@ -40,24 +41,53 @@ footer{
 	
 }
 
-.left, .center, .right {
+.header-left, .header-center, .header-right {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
       white-space: nowrap;
 }
     
-.left {
-	left: 16px;
+.header-left {
+	left: 1vw;
+	transform: translateY(-100%);
 }
 
-.center {
+.header-left p {
+  margin: 0;
+  line-height: 1;
+  padding: 0;
+}
+
+.header-center {
 	left: 50%;
+	transform: translate(-50%,-100%);
+}
+
+.header-center p {
+  margin: 0;
+  line-height: 1;
+  padding: 0;
+}
+
+.header-right {
+	right: 1vw;
+	transform: translateY(-50%);
+}
+
+
+
+.footer-center{
+	position: absolute;
+    top: 50%;
+    white-space: nowrap;
+    left: 50%;
 	transform: translate(-50%,-50%);
 }
 
-.right {
-	right: 16px;
+.footer-center button{
+	margin: 0;
+  line-height: 1;
+  padding: 0;
 }
 
 .modal-button{
@@ -66,6 +96,10 @@ font-size: 24px;
       border: none;
       color: white;
       cursor: pointer;
+}
+
+.header-p{
+	color:white;
 }
 
 .container{
