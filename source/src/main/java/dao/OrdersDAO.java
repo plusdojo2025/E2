@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,5 +64,54 @@ public class OrdersDAO extends SuperDAO{
 				}
 			}
 		}
+	}
+	
+	//注文登録
+	public boolean insert(int userId, String orderCode, int totalAmount) {
+
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e2?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+
+			// SQL文を準備する
+			String sql = "INSERT INTO orders (user_id, order_code, is_paid, is_complete, is_handed, total_amount) VALUES (?, ?, 0, 0, 0, ?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+			pStmt.setInt(1, userId);
+			pStmt.setString(2, orderCode);
+			pStmt.setInt(3, totalAmount);
+			
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
 	}
 }
