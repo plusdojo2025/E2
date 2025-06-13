@@ -5,8 +5,30 @@ body {
 	
 }
 
+.container {
+	text-align: center;
+	
+	
+}
+
+.detail {
+	
+	justify-content: center;
+}
+
+.detail-btn {
+	
+	justify-content: right;
+}
+
+.cart-btn {
+	
+	justify-content: center;
+	
+}
+
 .header {
-	background-color: #f8c471;
+	background-color: #ed7d31;
 	padding: 20px;
 	text-align: center;
 	
@@ -14,7 +36,7 @@ body {
 }
 
 .footer {
-	background-color: #f8c471;
+	background-color: #ed7d31;
 	padding: 20px;
 	text-align: center;
 }
