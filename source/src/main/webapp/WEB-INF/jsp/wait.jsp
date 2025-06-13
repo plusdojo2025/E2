@@ -16,32 +16,30 @@
 			</p>
 		</div>
 		<br>
-		<p>お支払金額</p>
-		<span>0000</span>
-		<div class="message">
+		<div class="sum-price">
+			<p>お支払金額</p>
+			<span class="price">&yen;0000</span>
+		</div>
+		<div class="message-top">
 			<p>
 				お会計の準備が出来ましたら、<br> この画面を店員にお見せください。
 			</p>
 		</div>
-		<p>未決済</p>
-		<div>
-			<div class="number">
-				ご注文番号&emsp;<span>000</span>
-			</div>
+		<p class="status">未決済</p>
+		<div class="number">
+			ご注文番号&emsp;<span>000</span>
 		</div>
 		<div class="message">
 			<div>
 				ご注文が完了しました。<br> <br> 商品の準備が整うまで、<br> いましばらくお待ちください。
 			</div>
 		</div>
-		<div>
-			<div class="number">
-				ご注文番号&emsp;<span>000</span>
-			</div>
-			<div class="message">
-				<div>
-					商品が完成いたしました。<br> 商品提供口までお越しください。
-				</div>
+		<div class="number">
+			ご注文番号&emsp;<span>000</span>
+		</div>
+		<div class="message">
+			<div>
+				商品が完成いたしました。<br> <br>商品提供口までお越しください。
 			</div>
 		</div>
 		<div class="message">
@@ -49,7 +47,7 @@
 				<strong>お買い上げいただき<br> ありがとうございました！
 				</strong>
 				<div>
-					またのご利用を<br> お待ちしております
+					<br>またのご利用を<br> お待ちしております。
 				</div>
 			</div>
 		</div>

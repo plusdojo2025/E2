@@ -3,9 +3,25 @@
 .number{
 	text-align: center;
 }
-.message{
-	padding: 10px;
-	width: 20vw;
-	margin: auto auto;
+.price{
 	border: 1px solid black;
+	padding:0 10vw;
+}
+.message{
+	width: 25vw;
+	height: 10vw;
+	margin: auto auto auto auto;
+	padding-top: 4vw; 
+	padding-bottom: 2vw;
+	border: 1px solid black;
+	text-align: center;
+}
+.message-top{
+	text-align: center;
+}
+.sum-price{
+	text-align: center;
+}
+.status{
+	margin-left: 2vw;
 }

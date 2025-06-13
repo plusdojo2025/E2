@@ -9,8 +9,8 @@
 </head>
 <body>
 	<header></header>
-	<div class="productInfomation">
-		<span>商品画像</span> <span class="cartProductDisplay">商品名</span>
+	<div class="product-infomation">
+		<span>商品画像</span> <span class="cart-product-display">商品名</span>
 	</div>
 	<!--<a id="minus" class="number-control">-</a>
 <input type="number" id="number" value="1" max="99" min="1"/>
@@ -28,12 +28,12 @@
 	<br>
 	<div class="sum-price">
 		<p>
-			合計&emsp;&emsp;￥&nbsp;<span class="totalMonetary">0000</span>
+			合計&emsp;&emsp;&yen;&nbsp;<span class="total-monetary">0000</span>
 		</p>
 	</div>
 	<form>
-		<div class="payMent">
-			<input type="submit" value="支払画面へ">
+		<div class="pay-ment">
+			<a><input type="submit" value="支払画面へ"></a>
 		</div>
 	</form>
 	<footer></footer>

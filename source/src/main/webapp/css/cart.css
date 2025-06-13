@@ -3,15 +3,18 @@
 .sum-price{
 	text-align: right;
 	}
-.payMent{
+.pay-ment{
 	display: flex;
 	justify-content: center;
 }
 .price{
 	text-align: right;
 }
-.productInfomation{
+.product-infomation{
 	text-align: left;
+}
+.total-monetary{
+	border-bottom: 1px solid black;
 }
 input[type="submit"]{
 	width: 23vw;
