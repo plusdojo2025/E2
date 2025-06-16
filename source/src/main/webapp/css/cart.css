@@ -1,11 +1,33 @@
 @charset "UTF-8";
 
+
+body{	
+	margin: 0;
+	background-color: #faf2d6;
+	background-color: #faf2d6;
+	font-size: 4vw;
+}
+
+header{
+	 position: sticky; /* ここに注目! */
+  top: 0;
+  height: 50px;
+  color: white;
+  padding-inline: 15px;
+  align-content: center;
+	background-color: #ed7d31; 
+}
+.main{
+	position: relative;
+}
+
 .sum-price{
 	text-align: right;
 	}
 .pay-ment{
 	display: flex;
 	justify-content: center;
+	padding-bottom: -10vw;
 }
 .price{
 	text-align: right;
@@ -16,15 +38,24 @@
 .total-monetary{
 	border-bottom: 1px solid black;
 }
+footer{
+	background-color: #ed7d31;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
 input[type="submit"]{
-	width: 23vw;
-	height: 4vw;
+	font-size: 4vw;
+	width: 50vw;
+	height: 10vw;
 	background-color: white;
 	color: black;
+	bottom: 0;
 }
-input[type="number"]::-webkit-outer-spin-button,
+/*input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button{
 	-webkit-appearance: none;
   appearance: none;
   margin: 0;
-}
+}*/
+

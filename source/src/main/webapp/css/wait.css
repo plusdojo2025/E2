@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+body{	
+	margin: 0;
+	background-color: #faf2d6;
+	background-color: #faf2d6;
+	font-size: 4vw;
+}
+header{	 
+	position: absolute; /* ここに注目! */
+  top: 0;
+  height: 50px;
+  color: white;
+  padding-inline: 15px;
+  align-content: center;
+	background-color: #ed7d31; 
+	width: 100%;
+}
 .number{
 	text-align: center;
 }
@@ -8,8 +24,8 @@
 	padding:0 10vw;
 }
 .message{
-	width: 25vw;
-	height: 10vw;
+	width: 65vw;
+	height: 35vw;
 	margin: auto auto auto auto;
 	padding-top: 4vw; 
 	padding-bottom: 2vw;
@@ -25,3 +41,9 @@
 .status{
 	margin-left: 2vw;
 }
+footer{
+	background-color: #ed7d31;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	}

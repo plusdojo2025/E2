@@ -52,6 +52,6 @@
 			</div>
 		</div>
 	</main>
-	<footer></footer>
+	<footer>仮置き </footer>
 </body>
 </html>
