@@ -21,25 +21,25 @@
       <tr>
         <td>
           <!-- <label>名前<br> -->
-          <input type="text" name="name" placeholder="名前">
-          </label>
+          <input type="text" name="name" placeholder="名前" class="login-tb">
+          <!--</label>-->
         </td>
       </tr>
       <tr>
         <td>
          <!--  <label>パスワード<br> -->
-          <input type="password" name="password" placeholder="パスワード">
-          </label>
+          <input type="password" name="password" placeholder="パスワード" class="login-tb">
+          <!--</label>-->
         </td>
       </tr>
       <tr>
         <td>
-          <input type="button" name="login" value="ログイン">
+          <input type="button" name="login" value="ログイン" class="button">
         </td>
       </tr>
       <tr>
       	<td>
-      		<input type="button" name="userRegist" value="新規作成">
+      		<input type="button" name="userRegist" value="新規作成" class="button">
       	</td>
       </tr>
     </table>

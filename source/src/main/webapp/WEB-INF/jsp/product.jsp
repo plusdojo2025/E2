@@ -19,23 +19,20 @@
 	<div class="container">
 		<div class="detail">
 			<p>商品名</p>
-			<p name="productExplain">商品説明</p>
+			<p>商品説明</p>
 		</div>
 
 		
 
 		<div class="detail">
-			<span>合計金額:<a  name="total">100</a>円</span>
+			<span class="total">合計金額:<a>100</a>円</span>
 		</div>
-
-
 		<div class="detail-btn">
 			<button onclick="decrease()">-</button>
 			<span>1</span>
 			<button onclick="increase()">+</button>
 		</div>
-
-
+		
 		<div class="cart-btn">
 			<input type="button" name="inCart" value="カートに追加">
 		</div>

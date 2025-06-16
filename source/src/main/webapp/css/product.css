@@ -7,22 +7,32 @@ body {
 
 .container {
 	text-align: center;
+	padding-top: 100px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
 	
 	
 }
 
 .detail {
-	
+	margin: 20px 0 20px 0;
 	justify-content: center;
 }
 
-.detail-btn {
+.total {
+	margin-right: 160px;
 	
+}
+
+.detail-btn {
+	margin-left: 160px;
 	justify-content: right;
 }
 
 .cart-btn {
-	
+	margin-top: 50px;
+	margin-bottom: 50px;
 	justify-content: center;
 	
 }
