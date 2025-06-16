@@ -117,9 +117,11 @@ public class UsersDAO extends SuperDAO{
 	}
 	
 	// ユーザー認証
-    public boolean authenticate(String userName, String password) {
+    public int authenticate(String userName, String password) {
 		Connection conn = null;
         try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			// データベース接続
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e2?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
@@ -129,10 +131,12 @@ public class UsersDAO extends SuperDAO{
             stmt.setString(1, userName);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
-            return rs.next();
-        } catch (SQLException e) {
+            if(rs.next()) {
+            	return rs.getInt("user_id");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return false;
+        return 0;
     }
 }
