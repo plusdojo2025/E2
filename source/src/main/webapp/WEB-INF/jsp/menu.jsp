@@ -9,6 +9,22 @@
 <link rel="stylesheet" href="css/menu.css" />
 </head>
 <body>
+
+<header>
+<div class="header-left">
+<input type="submit" name="moveMenu" value="MENU" class="mb">
+</div>
+<div class="header-center">
+<p>○○店</p>
+</div>
+
+
+<div class="header-right">
+<p>リコメンテイターはここにあった</p>
+</div>
+</header>
+
+<main>
 	<div class="product-display">
 		<div class="product">
 			<div class="product-picture">
@@ -31,5 +47,20 @@
 			</div>
 		</div>
 	</div>
+</main>
+	
+<footer>
+<div class="footer-left">
+<button class="fl">
+<img src="image/iconReturn.png" height="105" alt="戻る">
+</button>
+</div>
+<div class="footer-right">
+<button class="fr">
+<img src="image/iconCart.png" height="105" alt="カート">
+</button>
+</div>
+</footer>
+
 </body>
 </html>

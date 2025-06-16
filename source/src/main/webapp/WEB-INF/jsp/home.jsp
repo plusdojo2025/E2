@@ -4,14 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ホーム画面</title>
 <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
 <header>
-<p class="header-p header-left">OrderMaker</p>
-<p class="header-p header-center">ホーム画面</p>
-<button class="modal-button header-right">☰</button>
+<div class="header-left">
+<img src="image/Logo.png" height="50" alt="ロゴ">
+</div>
+<div class="header-center">
+<p class="header-p">ホーム画面</p>
+</div>
+<div class="header-right">
+<button class="log"><img src="image/iconLogOut.png" height="35" alt="ロゴ"></button>
+</div>
 </header>
 
 
@@ -28,7 +35,13 @@
 
 
 <footer>
-<input type="submit" name="moveOrder" value="注文確認" class="footer-center">
+<div class="footer-center">
+ <section>
+    <a href="#" class="btn_03">注文確認</a>
+  </section>
+</div>
+
+
 </footer>
 
 </body>

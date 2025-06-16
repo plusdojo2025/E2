@@ -1,1 +1,121 @@
 @charset "UTF-8";
+
+*{
+	
+}
+
+body{
+	background-color:  #faf2d6;
+}
+
+main{
+	padding-top: 10vh;
+}
+
+header{
+	position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+	align-items: center;
+	background-color: #ed7d31;
+	height: 10vh;
+}
+
+main{
+	padding-top: 10vh;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+	align-items: center;
+	background-color: #ed7d31;
+	height: 10vh;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+.header-left{
+	justify-content: flex-start;
+	margin-left: 5vw;
+}
+
+.header-center{
+	justify-content: center;
+}
+
+.header-right{
+	justify-content: flex-end;
+	margin-right: 5vw;
+}
+
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.footer-left{
+	justify-content: flex-start;
+	margin-left: 5vw;
+}
+
+.footer-right{
+	justify-content: flex-end;
+	margin-right: 5vw;
+}
+
+.fl{
+	background: none;
+	border:0;
+}
+
+.fr{
+	background: none;
+	border:0;
+}
+
+.mb{
+	width: 105px;       /* 幅 */
+  	height: 105px;       /* 高さ */
+  	font-size: 18px;    /* 文字の大きさ */
+  	padding: 10px 20px; /* 内側の余白（高さ・横幅にも影響） */;
+}
+
+/* スマホ用 */
+@media (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* タブレット用 */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* PC用 */
+@media (min-width: 769px) {
+  body {
+    font-size: 30px;
+  }
+}
