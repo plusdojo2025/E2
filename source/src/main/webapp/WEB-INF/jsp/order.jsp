@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>注文確認</title>
 <link rel="stylesheet" href="css/user.css">
 <link rel="stylesheet" href="css/order.css">
 </head>
@@ -39,15 +39,53 @@
 				<td>○</td>
 				<td>×</td>
 				<td>×</td>
-				<td></td>
-				<td></td>
+				<td>0</td>
+				<td>0</td>
 				<td>1</td>
 			</tr>
 		</tbody>
 	</table>
-	
-	<table>
-	
-	</table>
+
+	<div class="order-detail-container">
+		<%-- あとでstyle="display: none;"を追加する --%>
+		<span class="close-button">&times;</span>
+		<table class="order-info-table">
+			<thead>
+				<tr>
+					<th class="order-info-header">1</th>
+					<th class="order-info-header">1200円</th>
+					<th class="order-info-header">3点</th>
+				</tr>
+				<tr>
+					<th class="order-status-header">支払</th>
+					<th class="order-status-header">作成</th>
+					<th class="order-status-header">受渡</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="order-status">×</td>
+					<td class="order-status">×</td>
+					<td class="order-status">×</td>
+				</tr>
+			</tbody>
+			<div class="order-product-table">
+				<thead>
+					<tr>
+						<th class="order-product-header">アップルパイ</th>
+						<th class="order-product-header">フルーツタルト</th>
+						<th class="order-product-header">フォンダンショコラ</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>0</td>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</div>
+		</table>
+	</div>
 </body>
 </html>
