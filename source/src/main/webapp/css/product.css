@@ -2,63 +2,63 @@
 
 body {
 	background-color: #faf2d6;
-	
+	margin: 0;
 }
 
 .container {
 	text-align: center;
-	padding-top: 100px;
-	padding-right: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	
-	
+}
+
+.img {
+	margin-right: 9vw;
+	margin-left: 9vw;
+	margin-top: 25vw;
+	border: 2px solid black;
+}
+
+.eximage {
+	width: 50vw;
+	height: 50vw;
 }
 
 .detail {
 	font-size: 5vw;
-	margin: 20px 0 20px 0;
+	margin: 5vw 0 5vw 0;
 	justify-content: center;
+}
+
+.name {
+	text-align: left;
+	margin-left: 10vw;
 }
 
 .box {
 	border: 2px solid black;
-	padding: 50px;
-	width: 88vw;
+	margin-left: 9vw;
+	
+	padding: 5vw;
+	width: 70vw;
 }
 
 .total {
-	margin-right: 160px;
+	margin-right: 40vw;
 }
 
 .detail-btn {
 	font-size: 5vw;
-	margin-left: 160px;
+	margin-left: 50vw;
+	margin-top: -14vw;
 	justify-content: right;
 }
 
 .cart-btn {
-	margin-top: 10vw;
+	margin-top: 1vw;
 	justify-content: center;
 	
 }
 
-.header {
-	position:fixed;
-	top: 0;
-	width: 100vw;
-	background-color: #ed7d31;
-	padding: 20px;
-	text-align: center;
-	
-
-}
-
-.footer {
-	position:fixed;
-	bottom: 0;
-	width: 100vw;
-	background-color: #ed7d31;
-	padding: 20px;
-	text-align: center;
+.cart-btn input {
+	width: 25vw;
+	height: 5vw;
+	font-size: 3vw;
 }

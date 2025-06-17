@@ -7,12 +7,20 @@
 
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/recommend.css">
+<link rel="stylesheet" type="text/css" href="css/customer.css">
 </head>
 <body>
 	<!-- ここからヘッダー -->
-	<div class="header">
-	<p>共通ヘッダーのところ</p>
-	</div>
+<header>
+<div class="header-left">
+<input type="submit" name="moveMenu" value="MENU" class="mb">
+</div>
+<div class="header-center">
+<p>○○店</p>
+</div>
+<div class="header-right">
+</div>
+</header>
 	<!-- ここまでヘッダー -->
 
 	<!-- ここからメイン -->
@@ -34,6 +42,8 @@
 	<span class="btn"><input type="button" name="selectAnswer" value="No"></span>
 	</div>
 	
+	<a href="#" class="btn-flat-double-border">BUTTON</a>
+	
 	<br>
 
 	<div class="result">
@@ -42,9 +52,18 @@
 	<!-- ここまでメイン -->
 	
 	<!-- ここからフッター -->
-	<div class="footer">
-	<p>共通フッターのところ
-	</div>
+<footer>
+<div class="footer-left">
+<button class="fl">
+<img src="image/iconReturn.png" height="105" alt="戻る">
+</button>
+</div>
+<div class="footer-right">
+<button class="fr">
+<img src="image/iconCart.png" height="105" alt="カート">
+</button>
+</div>
+</footer>
 	<!-- ここまでフッター -->
 </body>
 </html>

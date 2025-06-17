@@ -2,33 +2,47 @@
 
 body {
 	background-color: #faf2d6;
-	
-}
-
-.header {
-	background-color: #ed7d31;
-	padding: 20px;
-	text-align: center;
-	
-
-}
-
-.footer {
-	background-color: #ed7d31;
-	padding: 20px;
-	text-align: center;
+	margin: 0;
 }
 
 .quest {
-	text-align: center;
-	padding: 50px;
+	text-align: left;
+	font-size: 5vw;
+	margin-top: 20vw;
+	margin-bottom: 5vw;
+	margin-left: 15vw;
 }
 
 .btn {
-	padding: 60px 60px;
+	justify-content: center;
+	padding: 5vw;
+	margin: 2vw;
+	text-align: center;
+}
+
+.btn input {
+	width: 25vw;
+	height: 10vw;
+	font-size: 5vw;
 }
 
 .result {
 	text-align: center;
-	padding: 15px;
+	margin-top: 13vw;
+}
+
+.result input {
+	width: 20vw;
+	height: 8vw;
+	font-size: 4vw;
+}
+
+.btn-flat-double-border {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: double 4px #fdc282;
+  border-radius: 3px;
+ 
 }
