@@ -23,3 +23,63 @@
   	color: #fff;
   	background: #0b76a0;
 }
+
+/* 写真の場所のとこ全体の調整をするやーつ */
+.photo-gallery {
+    display: flex;              /* 横並びに */
+    flex-wrap: wrap;            /* 画面が狭くなったら折り返す */
+    gap: 16px;                  /* 写真間の余白 */
+    justify-content: center;   /* 中央寄せ */
+    padding: 20px;
+}
+
+/* 各写真の調整用 */
+.photo-gallery img {
+    width: 200px;               /* 幅 */
+    height: 150px;              /* 高さ */
+    object-fit: cover;         /* トリミングしてサイズ内に収めるやーつ */
+    border: 2px solid #ccc;    /* 枠線 */
+    border-radius: 8px;        /* 角丸にするやーつ（不要なら消す） */
+    cursor: pointer;           /* マウスカーソルをポインターにするやーつ */
+    transition: transform 0.2s;
+}
+
+
+/* 商品詳細の背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /*最初は非表示by中村*/
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 商品詳細 */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    position: relative;
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .photo-gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
