@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ホーム画面</title>
 <link rel="stylesheet" href="css/user.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 <header>
@@ -24,10 +25,22 @@
 
 
 <main>
-<div class=container>
-<input type="submit" name="openQR" value="QR表示">
+<div class=QR-position>
+<button class="QR-button">QR表示</button>
 </div>
-<div class=container>
+
+<div class=regist-position>
+<button class=regist-button>商品追加</button>
+</div>
+
+<div>
+<p>ちいかわ</p>
+<p>ちいかわ</p>
+<p>ちいかわ</p>
+<p>ちいかわ</p>
+<p>ちいかわ</p>
+<p>ちいかわ</p>
+<p>屍山血河</p>
 <p>ちいかわ</p>
 </div>
 </main>
@@ -40,8 +53,6 @@
     <a href="#" class="btn_03">注文確認</a>
   </section>
 </div>
-
-
 </footer>
 
 </body>

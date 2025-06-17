@@ -6,8 +6,6 @@
 
 body{
 	background-color:  #F2f2f2;
-	font-family: 'Open Sans', sans-serif;
-  	word-break: break-all;
 }
 
 
@@ -40,6 +38,8 @@ footer{
 	align-items: center;
 	background-color: #3a7d23;
 	height: 10vh;
+	font-family: 'Open Sans', sans-serif;
+  	word-break: break-all;
 }
 
 

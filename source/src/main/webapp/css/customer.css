@@ -96,7 +96,6 @@ footer{
 	width: 105px;       /* 幅 */
   	height: 105px;       /* 高さ */
   	font-size: 18px;    /* 文字の大きさ */
-  	padding: 10px 20px; /* 内側の余白（高さ・横幅にも影響） */;
 }
 
 /* スマホ用 */

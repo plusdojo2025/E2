@@ -1,13 +1,25 @@
 @charset "UTF-8";
 
+.QR-button{
+  	position: fixed;  /* 画面に固定 */
+  	top: 12vh;     /* 画面下から20px */
+  	left: 5vw;      /* 画面右から20px */
+  	z-index: 1000;    /* 他の要素より前面に */
+	width: 85px;       /* 幅 */
+  	height: 85px;       /* 高さ */
+  	font-size: 18px;    /* 文字の大きさ */
+}
 
-
-
-
-.container{
-	display:flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 20px 0;
-	padding: 40px;
+.regist-button{
+	position: fixed;  /* 画面に固定 */
+  	bottom: 12vh;     /* 画面下から20px */
+  	right: 5vw;      /* 画面右から20px */
+  	z-index: 1000;    /* 他の要素より前面に */
+  	border: 2px solid #3f4a4a;
+  	border-radius: 30px;
+	width: 30vw;       /* 幅 */
+  	height: 8vh;       /* 高さ */
+  	font-size: 18px;    /* 文字の大きさ */
+  	color: #fff;
+  	background: #0b76a0;
 }
