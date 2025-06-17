@@ -39,9 +39,9 @@
 			<span class="total">合計金額:<a>100</a>円</span>
 		</div>
 		<div class="detail-btn">
-			<button onclick="decrease()">-</button>
-			<span>1</span>
-			<button onclick="increase()">+</button>
+			<button onclick="changeNum(-1)">-</button>
+			<span id="piece">1</span>
+			<button onclick="changeNum(1)">+</button>
 		</div>
 		
 		<div class="cart-btn">
