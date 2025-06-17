@@ -83,14 +83,14 @@ public class LoginServlet extends HttpServlet {
 		            request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 				}else { // 一致するユーザーが見つからなかった場合
 					if(dao.insert(name, pw, "", "")) {
-						System.out.println("登録完了");
+						System.out.println("ユーザー登録完了");
 						HttpSession session = request.getSession();
 						session.setAttribute("user_id", userId);
 						session.setAttribute("user_name", name);
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 						dispatcher.forward(request, response);
 					} else {
-						System.out.println("登録失敗");
+						System.out.println("ユーザー登録失敗");
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 						dispatcher.forward(request, response);
 					}

@@ -38,6 +38,12 @@ public class OrderServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//文字コード設定
+		request.setCharacterEncoding("UTF-8");
+		
+		//リクエストパラメータ取得
+		
+		
 		doGet(request, response);
 	}
 
