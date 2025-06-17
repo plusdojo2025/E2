@@ -42,8 +42,6 @@
 	<span class="btn"><input type="button" name="selectAnswer" value="No"></span>
 	</div>
 	
-	<a href="#" class="btn-flat-double-border">BUTTON</a>
-	
 	<br>
 
 	<div class="result">

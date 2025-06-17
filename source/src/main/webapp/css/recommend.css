@@ -6,17 +6,16 @@ body {
 }
 
 .quest {
-	text-align: left;
+	text-align: center;
 	font-size: 5vw;
-	margin-top: 20vw;
+	margin-top: 19vw;
 	margin-bottom: 5vw;
-	margin-left: 15vw;
+	margin-left: 2vw;
 }
 
 .btn {
-	justify-content: center;
 	padding: 5vw;
-	margin: 2vw;
+	margin-right: 3vw;
 	text-align: center;
 }
 
@@ -35,14 +34,4 @@ body {
 	width: 20vw;
 	height: 8vw;
 	font-size: 4vw;
-}
-
-.btn-flat-double-border {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  color: #67c5ff;
-  border: double 4px #fdc282;
-  border-radius: 3px;
- 
 }

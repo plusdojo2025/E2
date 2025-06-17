@@ -17,8 +17,8 @@ body {
 }
 
 .eximage {
-	width: 50vw;
-	height: 50vw;
+	width: 45vw;
+	height: 30vw;
 }
 
 .detail {
@@ -35,9 +35,9 @@ body {
 .box {
 	border: 2px solid black;
 	margin-left: 9vw;
-	
 	padding: 5vw;
 	width: 70vw;
+	height: 45vw;
 }
 
 .total {
@@ -52,7 +52,7 @@ body {
 }
 
 .cart-btn {
-	margin-top: 1vw;
+	margin-top: 13vw;
 	justify-content: center;
 	
 }
