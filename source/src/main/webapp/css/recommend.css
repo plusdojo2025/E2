@@ -8,8 +8,8 @@ body {
 .quest {
 	text-align: center;
 	font-size: 5vw;
-	margin-top: 19vw;
-	margin-bottom: 5vw;
+	margin-top: 20vw;
+	margin-bottom: 3vw;
 	margin-left: 2vw;
 }
 
@@ -20,6 +20,10 @@ body {
 }
 
 .btn input {
+	background-color: #e8f8f5;
+	border-style: ridge;
+	border-color: #a3e4d7;
+	border-width: 1vw;
 	width: 25vw;
 	height: 10vw;
 	font-size: 5vw;
