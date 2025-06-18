@@ -2,31 +2,88 @@
 
 body {
 	background-color: #f2f2f2;
+	margin: 0;
 }
+
 .header {
-	padding: 100px;
-	text-align: center;
-	line-height: 2;
+	position: fixed;
+	margin-top: 0;
+	width: 100vw;
+	height: 80vw;
 	background-color: #3a7d23;
-	
+}
+
+.header-logo {
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 8vw;
+	margin-top: 25vw;
 }
 
 .login {
-	padding: 10px;
+	padding: 100vw 10vw 10vw 10vw;
 	text-align: center;
 	display: flex;
 	justify-content: center;
-	
 }
 
-.login-tb {
-	width: 170px;
-	height: 30px;
-	margin: 10px 0 10px 0;
+.login-input {
+	padding: 1vw;
+	width: 40vw;
+	height: 8vw;
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+	font-size: 5vw;
 }
 
 .button {
-	width: 170px;
-	height: 30px;
-	margin: 10px 0 10px 0;
+	width: 33vw;
+	height: 8vw;
+	margin-top: 2vw;
+	font-size: 4vw;
+}
+
+.button input {
+	font-size: 5vw;
+}
+
+@media screen and (min-width: 1000px) {
+	.header {
+		position: fixed;
+		margin-top: 0;
+		width: 50vw;
+		height: 80vw;
+		background-color: #3a7d23;
+	}
+	.header-logo {
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 5vw;
+		margin-top: 20vw;
+	}
+	
+	.login {
+		padding: 15vw 13vw 10vw 10vw;
+		text-align: center;
+		display: flex;
+		justify-content: right;
+	}
+	.login-input {
+		width: 300px;
+		height: 20px;
+		margin-top: 0;
+		margin-bottom: 2vw;
+		font-size: 20px;
+	}
+	
+	.button {
+		width: 300px;
+		height: 40px;
+		margin-top: 2vw;
+		font-size: 20px;
+	}
+	.button input {
+		font-size: 5vw;
+	}
+
 }

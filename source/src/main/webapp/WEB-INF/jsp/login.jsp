@@ -13,7 +13,9 @@
 <body>
 
 <!-- ここからヘッダー -->
-<h1 class="header">Order Maker<br>簡単登録！機能豊富</h1>
+<div class="header">
+<h1 class="header-logo">Order Maker<br>簡単登録！機能豊富</h1>
+</div>
 <!-- ここまでヘッダー -->
 
 <!-- ここからメイン -->
@@ -23,14 +25,14 @@
       <tr>
         <td>
           <!-- <label>名前<br> -->
-          <input type="text" name="name" placeholder="名前" class="login-tb">
+          <input type="text" name="name" placeholder="名前" class="login-input">
           <!--</label>-->
         </td>
       </tr>
       <tr>
         <td>
          <!--  <label>パスワード<br> -->
-          <input type="password" name="password" placeholder="パスワード" class="login-tb">
+          <input type="password" name="password" placeholder="パスワード" class="login-input">
           <!--</label>-->
         </td>
       </tr>
@@ -44,12 +46,12 @@
       </tr>
       <tr>
         <td>
-          <input type="submit" name="submit" value="ログイン" class="button">
+          <input type="submit" name="submit" value="ログイン" class="button" style="background-color: #3a7d23; color: #FFFFFF;">
         </td>
       </tr>
       <tr>
       	<td>
-      		<input type="submit" name="submit" value="新規作成" class="button">
+      		<input type="submit" name="submit" value="新規登録" class="button">
       	</td>
       </tr>
     </table>
