@@ -23,39 +23,33 @@
 
 	<main class="main">
 		<div class="product-infomation">
-			<span><img src="" alt="商品画像"></span> <span
-				class="cart-product-display">商品名</span>
+			<span><img src="image/Logo.png" alt="商品画像" class="product-img"
+				align="top"></span> <span class="cart-product-display">商品名</span>
+
 		</div>
-		<!--<a id="minus" class="number-control">-</a>
-<input type="number" id="number" value="1" max="99" min="1"/>
-<a id="plus" class="number-control">+</a>-->
+
 		<div class="price">
-			<!--  -->
-			<button type="button" name="button" class="btn-minus">
-				<img src="">
-			</button>
-			<span>1</span>
-			<button type="button" name="button" class="btn-plus">
-				<img src="">
-			</button>
-			<span>商品価格</span>
+			<div class="detail-btn">
+				<button onclick="changeNum(-1)">-</button>
+				&ensp; <span id="piece">1</span> &ensp;
+				<button onclick="changeNum(1)">+</button>
+				<span>商品価格</span>
+			</div>
 		</div>
 		<br>
 
 		<div class="product-infomation">
-			<span><img src="" alt="商品画像"></span> <span
-				class="cart-product-display">商品名</span>
+			<span><img src="image/Logo.png" alt="商品画像" class="product-img"
+				align="top"></span> <span class="cart-product-display">商品名</span>
 		</div>
+
 		<div class="price">
-			<!--  -->
-			<button type="button" name="button" class="btn-minus">
-				<img src="">
-			</button>
-			<span class="number">1</span>
-			<button type="button" name="button" class="btn-plus">
-				<img src="">
-			</button>
-			<span>商品価格</span>
+			<div class="detail-btn">
+				<button onclick="changeNum(-1)">-</button>
+				&ensp; <span id="piece">1</span> &ensp;
+				<button onclick="changeNum(1)">+</button>
+				<span>商品価格</span>
+			</div>
 		</div>
 		<br>
 
@@ -85,7 +79,9 @@
 	</footer>
 
 	<script>
-		
+		'use strict'
+
+		if (changeNum(1))
 	</script>
 </body>
 </html>
