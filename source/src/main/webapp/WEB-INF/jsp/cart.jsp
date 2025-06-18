@@ -28,7 +28,7 @@
 
 		</div>
 
-		<div class="price">
+		<div id="btn-wrapper">
 			<div class="detail-btn">
 				<button onclick="changeNum(-1)">-</button>
 				&ensp; <span id="piece">1</span> &ensp;
@@ -43,7 +43,7 @@
 				align="top"></span> <span class="cart-product-display">商品名</span>
 		</div>
 
-		<div class="price">
+		<div id="btn-wrapper">
 			<div class="detail-btn">
 				<button onclick="changeNum(-1)">-</button>
 				&ensp; <span id="piece">1</span> &ensp;

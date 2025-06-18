@@ -99,6 +99,21 @@ footer{
   	font-size: 18px;    /* 文字の大きさ */
 }
 
+/*プラスボタンとマイナスボタンのデザインです。*/
+button{
+	border-radius: 5vw;
+	width: 7vw;
+	height: 7vw;
+	font-size: 5vw;
+	text-decoration: none;
+	color: #008080;
+}
+.detail-btn button{	
+	border-width: 0.5vw;
+	border-color: #008080;
+	background-color: white;
+}
+
 /* スマホ用 */
 @media (max-width: 480px) {
   body {
