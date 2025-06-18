@@ -23,3 +23,13 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+
+/*↓は中村追加欄　テスト及び調整用*/
+table {
+        border-collapse: collapse;
+}
+table td, table th {
+        padding: 5px;
+        border: 1px solid black;
+}

@@ -26,20 +26,20 @@
 	<!-- ここからメイン -->
 	<div class="quest">
 		<p>辛いのは好き？</p>
-		<span class="btn"><input type="button" name="selectAnswer" value="Yes"></span>
-		<span class="btn"><input type="button" name="selectAnswer" value="No"></span>
+		<span class="btn"><input type="radio" name="selectAnswer" value="Yes"></span>
+		<span class="btn"><input type="radio" name="selectAnswer" value="No"></span>
 	</div>
 
 	<div class="quest">
 	<p>酸っぱいのが食べたい気分？</p>
-	<span class="btn"><input type="button" name="selectAnswer" value="Yes"></span>
-	<span class="btn"><input type="button" name="selectAnswer" value="No"></span>
+	<span class="btn"><input type="radio" name="selectAnswer" value="Yes"></span>
+	<span class="btn"><input type="radio" name="selectAnswer" value="No"></span>
 	</div>
 	
 	<div class="quest">
 	<p>甘いのは好き？</p>
-	<span class="btn"><input type="button" name="selectAnswer" value="Yes"></span>
-	<span class="btn"><input type="button" name="selectAnswer" value="No"></span>
+	<span class="btn"><input type="radio" name="selectAnswer" value="Yes"></span>
+	<span class="btn"><input type="radio" name="selectAnswer" value="No"></span>
 	</div>
 	
 	<br>

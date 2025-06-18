@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,40 @@
 <link rel="stylesheet" href="css/order.css">
 </head>
 <body>
+
+<%--新規追加欄　最終的にはこうなるので変更するべからず --%>
+
+<c:if test="${empty orderList}">
+        <p>注文はありません。</p>
+    </c:if>
+
+    <c:if test="${not empty orderList}">
+        <table>
+            <tr>
+                <th>注文ID</th>
+                <th>注文コード</th>
+                <th>支払</th>
+                <th>作成</th>
+                <th>受渡</th>
+                <th>合計金額</th>
+                <th>注文日時</th>
+            </tr>
+
+            <c:forEach var="order" items="${orderList}">
+                <tr>
+                    <td>${order.orderId}</td>
+                    <td>${order.urderCode}</td>
+                    <td><c:choose><c:when test="${order.paid}">○</c:when><c:otherwise>×</c:otherwise></c:choose></td>
+                    <td><c:choose><c:when test="${order.complete}">○</c:when><c:otherwise>×</c:otherwise></c:choose></td>
+                    <td><c:choose><c:when test="${order.handed}">○</c:when><c:otherwise>×</c:otherwise></c:choose></td>
+                    <td>${order.totalAmount}</td>
+                    <td>${order.createdAt}</td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
+
+<%-- ↓は既存のもの --%>
 	<table>
 		<thead>
 			<tr>
