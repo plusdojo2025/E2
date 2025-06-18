@@ -3,6 +3,7 @@
 body {
 	background-color: #faf2d6;
 	margin: 0;
+	margin-bottom: 25vw;
 }
 
 .container {
@@ -12,19 +13,14 @@ body {
 .img {
 	margin-right: 9vw;
 	margin-left: 9vw;
-	margin-top: 25vw;
-	border: 2px solid black;
+	margin-top: 30vw;
 }
 
 .eximage {
-	width: 45vw;
-	height: 30vw;
-}
-
-.detail {
-	font-size: 5vw;
-	margin: 5vw 0 5vw 0;
-	justify-content: center;
+	max-height: 50vw;
+	max-width: 50vw;
+	border: 2px solid black;
+	border-radius: 3vw;
 }
 
 .name {
@@ -34,27 +30,38 @@ body {
 
 .box {
 	border: 2px solid black;
+	margin-right: 9vw;
 	margin-left: 9vw;
 	padding: 5vw;
-	width: 70vw;
-	height: 45vw;
+	text-align: left;
+	border-radius: 3vw;
+}
+
+.detail {
+	font-size: 5vw;
+	margin: 8vw 0 5vw 0;
+	justify-content: center;
 }
 
 .total {
-	margin-right: 40vw;
+	margin-right: 10vw;
 }
 
 .detail-btn {
 	font-size: 5vw;
-	margin-left: 50vw;
-	margin-top: -14vw;
 	justify-content: right;
 }
 
+.detail-btn button {
+	font-size: 4vw;
+	width: 6vw;
+	aspect-ratio: 1/1;
+	border-radius: 100%;
+}
+
 .cart-btn {
-	margin-top: 13vw;
+	margin-top: 10vw;
 	justify-content: center;
-	
 }
 
 .cart-btn input {
