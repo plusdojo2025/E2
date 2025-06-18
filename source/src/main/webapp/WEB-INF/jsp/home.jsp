@@ -57,7 +57,7 @@
     
         <span class="modal-close" id="closeModal">×</span>
         
-        <img id="modalImage" src="" alt="選択された画像" style="width: 100%; margin-bottom: 15px;">
+        <img id="modalImage" class="modal-image" src="" alt="選択された画像" >
         
         <form action="#" method="post">
         

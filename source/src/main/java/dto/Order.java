@@ -5,7 +5,7 @@ public class Order implements Serializable {
 
 	private int orderId;
 	private int userId;
-	private String urderCode;
+	private String orderCode;
 	private boolean isPaid;
 	private boolean isComplete;
 	private boolean isHanded;
@@ -24,10 +24,10 @@ public class Order implements Serializable {
 		this.userId = userId;
 	}
 	public String getUrderCode() {
-		return urderCode;
+		return orderCode;
 	}
-	public void setUrderCode(String urderCode) {
-		this.urderCode = urderCode;
+	public void setUrderCode(String orderCode) { //urderCodeになっていたためorderCodeに変更by中村
+		this.orderCode = orderCode;
 	}
 	public boolean isPaid() {
 		return isPaid;
@@ -64,12 +64,12 @@ public class Order implements Serializable {
 		this(0,0,"",false,false,false,0,null);
 	}
 	
-	public Order(int orderId, int userId, String urderCode, boolean isPaid, boolean isComplete, boolean isHanded,
+	public Order(int orderId, int userId, String orderCode, boolean isPaid, boolean isComplete, boolean isHanded,
 			int totalAmount, LocalDateTime createdAt) {
 		super();
 		this.orderId = orderId;
 		this.userId = userId;
-		this.urderCode = urderCode;
+		this.orderCode = orderCode;
 		this.isPaid = isPaid;
 		this.isComplete = isComplete;
 		this.isHanded = isHanded;
