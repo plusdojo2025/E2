@@ -36,13 +36,10 @@ public class MenuServlet extends HttpServlet {
 		//文字コード設定
 		request.setCharacterEncoding("UTF-8");
 		
-		//本来はQRコードから取得
-		int userId = 1;
-		
 		ProductsDAO dao = new ProductsDAO();
 		
 		//取得したデータを格納する配列
-		List<Product> productList = dao.getDataFromUserId(userId);
+		List<Product> productList = dao.getDataAll();
 		
 		HttpSession session = request.getSession();
 		

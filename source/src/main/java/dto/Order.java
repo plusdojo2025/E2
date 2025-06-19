@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 public class Order implements Serializable {
 
 	private int orderId;
-	private int userId;
 	private String orderCode;
 	private boolean isPaid;
 	private boolean isComplete;
@@ -16,12 +15,6 @@ public class Order implements Serializable {
 	}
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
-	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 	public String getUrderCode() {
 		return orderCode;
@@ -61,14 +54,13 @@ public class Order implements Serializable {
 	}
 	
 	public Order() {
-		this(0,0,"",false,false,false,0,null);
+		this(0,"",false,false,false,0,null);
 	}
 	
-	public Order(int orderId, int userId, String orderCode, boolean isPaid, boolean isComplete, boolean isHanded,
+	public Order(int orderId, String orderCode, boolean isPaid, boolean isComplete, boolean isHanded,
 			int totalAmount, LocalDateTime createdAt) {
 		super();
 		this.orderId = orderId;
-		this.userId = userId;
 		this.orderCode = orderCode;
 		this.isPaid = isPaid;
 		this.isComplete = isComplete;

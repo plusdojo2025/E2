@@ -39,7 +39,7 @@ public class ProductsDAO extends SuperDAO{
 
 			// 検索結果をコレクションに格納
 			while (r.next()) { // 結果がある場合のみオブジェクトを生成
-				Product product = new Product(r.getInt("product_id"),r.getInt("user_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getInt("allergy"),r.getString("product_detail"),r.getString("image_url"),r.getObject("created_at",LocalDateTime.class));
+				Product product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"),r.getObject("created_at",LocalDateTime.class));
 				productList.add(product);
 			}
 			
@@ -67,7 +67,7 @@ public class ProductsDAO extends SuperDAO{
 	}
 	
 	//商品登録
-	public boolean insert(int userId, String productName, int price, int isSoldOut, int allergy, String productDetail, String imageUrl) {
+	public boolean insert(String productName, int price, int isSoldOut, int allergy, String productDetail, String imageUrl) {
 
 		Connection conn = null;
 		boolean result = false;
@@ -82,16 +82,14 @@ public class ProductsDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "INSERT INTO users (user_id, product_name, price, is_sold_out, allergy, product_detail, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO users (product_name, price, is_sold_out, product_detail, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
-			pStmt.setInt(1, userId);
-			pStmt.setString(2, productName);
-			pStmt.setInt(3, price);
-			pStmt.setInt(4, isSoldOut);
-			pStmt.setInt(5, allergy);
-			pStmt.setString(6, productDetail);
-			pStmt.setString(7, imageUrl);
+			pStmt.setString(1, productName);
+			pStmt.setInt(2, price);
+			pStmt.setInt(3, isSoldOut);
+			pStmt.setString(4, productDetail);
+			pStmt.setString(5, imageUrl);
 			
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -135,16 +133,15 @@ public class ProductsDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "UPDATE users SET product_name = ?, price = ?, is_sold_out = ?, allergy = ?, product_detail = ?, image_url = ? WHERE product_id = ?";
+			String sql = "UPDATE users SET product_name = ?, price = ?, is_sold_out = ?, product_detail = ?, image_url = ? WHERE product_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			pStmt.setString(1, productName);
 			pStmt.setInt(2, price);
 			pStmt.setInt(3, isSoldOut);
-			pStmt.setInt(4, allergy);
-			pStmt.setString(5, productDetail);
-			pStmt.setString(6, imageUrl);
-			pStmt.setInt(7, productId);
+			pStmt.setString(4, productDetail);
+			pStmt.setString(5, imageUrl);
+			pStmt.setInt(6, productId);
 			
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -219,7 +216,7 @@ public class ProductsDAO extends SuperDAO{
 		return result;
 	}
 	
-	public List<Product> getDataFromUserId(int userId){
+	public List<Product> getDataAll(){
 		
 		List<Product> productList = new ArrayList<Product>();
 
@@ -235,17 +232,15 @@ public class ProductsDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL作成
-			String sql = "SELECT * FROM Products WHERE user_id = ?";
+			String sql = "SELECT * FROM Products";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			
-			pStmt.setInt(1, userId);
 
 			// SQLを実行して検索結果を取得
 			ResultSet r = pStmt.executeQuery();
 
 			// 検索結果をコレクションに格納
 			while (r.next()) { // 結果がある場合のみオブジェクトを生成
-				Product product = new Product(r.getInt("product_id"),r.getInt("user_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getInt("allergy"),r.getString("product_detail"),r.getString("image_url"),r.getObject("created_at",LocalDateTime.class));
+				Product product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"),r.getObject("created_at",LocalDateTime.class));
 				productList.add(product);
 			}
 			

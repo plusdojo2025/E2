@@ -44,7 +44,6 @@ public class ProductServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		// リクエストパラメータ取得
-		int userId = Integer.parseInt(request.getParameter("user_id"));
 		String productName = request.getParameter("product_name");
 		int price = Integer.parseInt(request.getParameter("price"));
 		int allergy = Integer.parseInt(request.getParameter("allergy"));
@@ -62,7 +61,7 @@ public class ProductServlet extends HttpServlet {
 	            return;
 	        } else {
 	        	 // データ登録
-	        	 if(dao.insert(userId, productName, price, 0, allergy, productDetail, imageUrl)) {
+	        	 if(dao.insert(productName, price, 0, allergy, productDetail, imageUrl)) {
 	        		 System.out.println("商品登録完了");
 	        	 } else {
 	        		 System.out.println("商品登録失敗");

@@ -39,7 +39,7 @@ public class OrdersDAO extends SuperDAO{
 
 			// 検索結果をコレクションに格納
 			while (r.next()) { // 結果がある場合のみオブジェクトを生成
-				Order order = new Order(r.getInt("order_id"),r.getInt("user_id"),r.getString("order_code"),r.getBoolean("is_paid"),r.getBoolean("is_complete"),r.getBoolean("is_handed"),r.getInt("total_amount"),r.getObject("created_at",LocalDateTime.class));
+				Order order = new Order(r.getInt("order_id"),r.getString("order_code"),r.getBoolean("is_paid"),r.getBoolean("is_complete"),r.getBoolean("is_handed"),r.getInt("total_amount"),r.getObject("created_at",LocalDateTime.class));
 				orderList.add(order);
 			}
 			
@@ -67,7 +67,7 @@ public class OrdersDAO extends SuperDAO{
 	}
 	
 	//注文登録
-	public boolean insert(int userId, String orderCode, int totalAmount) {
+	public boolean insert(String orderCode, int totalAmount) {
 
 		Connection conn = null;
 		boolean result = false;
@@ -82,12 +82,11 @@ public class OrdersDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "INSERT INTO orders (user_id, order_code, is_paid, is_complete, is_handed, total_amount) VALUES (?, ?, 0, 0, 0, ?)";
+			String sql = "INSERT INTO orders (order_code, is_paid, is_complete, is_handed, total_amount) VALUES (?, 0, 0, 0, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
-			pStmt.setInt(1, userId);
-			pStmt.setString(2, orderCode);
-			pStmt.setInt(3, totalAmount);
+			pStmt.setString(1, orderCode);
+			pStmt.setInt(2, totalAmount);
 			
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
