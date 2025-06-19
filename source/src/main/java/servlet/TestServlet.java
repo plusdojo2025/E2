@@ -13,11 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import dao.OrderProductsDAO;
 import dao.OrdersDAO;
 import dao.ProductsDAO;
-import dao.UsersDAO;
 import dto.Order;
 import dto.OrderProduct;
 import dto.Product;
-import dto.User;
 
 /**
  * Servlet implementation class TestServlet
@@ -43,12 +41,6 @@ public class TestServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         try{
-        	UsersDAO usersDao = new UsersDAO();
-        	List<User> userData = usersDao.getUserData(1);
-        	System.out.println("userData:"+userData.get(0).getUserName());
-        	//usersDao.insert("岸本", "000", "configtext", ".html");
-        	//usersDao.update("users","user_name","一戸","String","user_id",3);
-        	request.setAttribute("user", userData);
         	ProductsDAO productsDao = new ProductsDAO();
         	List<Product> productData = productsDao.getProductData(1);
         	System.out.println("productsData:"+productData);
