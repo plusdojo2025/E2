@@ -22,6 +22,8 @@ header{
 	align-items: center;
 	background-color: #ed7d31;
 	height: 10vh;
+	background: url(../img/crepe.png) center / cover;
+	z-index: 10;
 }
 
 main{
@@ -51,17 +53,26 @@ footer{
 
 
 .header-left{
+	position: fixed;
 	justify-content: flex-start;
 	margin-left: 5vw;
+	z-index: 100;
 }
 
 .header-center{
+	position: fixed;
 	justify-content: center;
+	font-size: 5vw;
+	z-index: 100;
+	right: 41vw;
+	
 }
 
 .header-right{
+	position: fixed;
 	justify-content: flex-end;
 	margin-right: 5vw;
+	z-index: 100;
 }
 
 
@@ -76,11 +87,13 @@ footer{
 .footer-left{
 	justify-content: flex-start;
 	margin-left: 5vw;
+	margin-bottom: 4vw;
 }
 
 .footer-right{
 	justify-content: flex-end;
-	margin-right: 5vw;
+	margin-right: 9vw;
+	margin-bottom: 5vw;
 }
 
 .fl{
@@ -94,25 +107,17 @@ footer{
 }
 
 .mb{
-	width: 105px;       /* 幅 */
-  	height: 105px;       /* 高さ */
-  	font-size: 18px;    /* 文字の大きさ */
+	width: 15vw;       /* 幅 */
+  	height: 13vw;       /* 高さ */
+  	font-size: 4vw;    /* 文字の大きさ */
+  	border-color: #73c6b6;
+	border-radius: 3vw;
+	border-width: 0.8vw;
+	background-color: #d6eaf8;
+	color: #154360;
 }
 
 /*プラスボタンとマイナスボタンのデザインです。*/
-button{
-	border-radius: 5vw;
-	width: 7vw;
-	height: 7vw;
-	font-size: 5vw;
-	text-decoration: none;
-	color: #008080;
-}
-.detail-btn button{	
-	border-width: 0.5vw;
-	border-color: #008080;
-	background-color: white;
-}
 
 /* スマホ用 */
 @media (max-width: 480px) {

@@ -12,6 +12,7 @@
 <body>
 
 	<header>
+		<img src="image/crepe.png">
 		<div class="header-left">
 			<input type="submit" name="moveMenu" value="MENU" class="mb">
 		</div>
@@ -31,9 +32,9 @@
 		<div id="btn-wrapper">
 			<div class="detail-btn">
 				<button onclick="changeNum(-1)">-</button>
-				&ensp; <span id="piece">1</span> &ensp;
+				<span id="piece">1</span>
 				<button onclick="changeNum(1)">+</button>
-				<span>商品価格</span>
+				<span class="product-sum">商品価格</span>
 			</div>
 		</div>
 		<br>
@@ -46,9 +47,9 @@
 		<div id="btn-wrapper">
 			<div class="detail-btn">
 				<button onclick="changeNum(-1)">-</button>
-				&ensp; <span id="piece">1</span> &ensp;
+				<span id="piece">1</span>
 				<button onclick="changeNum(1)">+</button>
-				<span>商品価格</span>
+				<span class="product-sum">商品価格</span>
 			</div>
 		</div>
 		<br>

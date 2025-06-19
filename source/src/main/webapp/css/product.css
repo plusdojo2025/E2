@@ -3,7 +3,7 @@
 body {
 	background-color: #faf2d6;
 	margin: 0;
-	margin-bottom: 25vw;
+	margin-bottom: 22vw;
 }
 
 .container {
@@ -13,7 +13,7 @@ body {
 .img {
 	margin-right: 9vw;
 	margin-left: 9vw;
-	margin-top: 30vw;
+	margin-top: 23vw;
 }
 
 .eximage {
@@ -29,12 +29,13 @@ body {
 }
 
 .box {
-	border: 2px solid black;
+	border-top: 2px solid #515a5a;
+	border-bottom: 2px solid #515a5a;
 	margin-right: 9vw;
 	margin-left: 9vw;
 	padding: 5vw;
 	text-align: left;
-	border-radius: 3vw;
+	
 }
 
 .detail {
@@ -44,7 +45,7 @@ body {
 }
 
 .total {
-	margin-right: 10vw;
+	margin-right: 26vw;
 }
 
 .detail-btn {
@@ -52,11 +53,19 @@ body {
 	justify-content: right;
 }
 
-.detail-btn button {
-	font-size: 4vw;
-	width: 6vw;
-	aspect-ratio: 1/1;
-	border-radius: 100%;
+button{
+	border-radius: 5vw;
+	width: 7vw;
+	height: 7vw;
+	font-size: 5vw;
+	text-decoration: none;
+	color: #008080;
+}
+
+.detail-btn button{	
+	border-width: 0.5vw;
+	border-color: #008080;
+	background-color: white;
 }
 
 .cart-btn {
@@ -65,7 +74,9 @@ body {
 }
 
 .cart-btn input {
-	width: 25vw;
-	height: 5vw;
-	font-size: 3vw;
+	font-size: 4vw;
+	width: 50vw;
+	height: 10vw;
+	background-color: white;
+	color: black;
 }

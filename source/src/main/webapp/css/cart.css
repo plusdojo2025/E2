@@ -12,10 +12,25 @@ body{
 	position: relative;
 }
 
+.cart-product-display {
+	font-size: 5vw;
+	position: relative;
+	bottom: 1vw;
+	left: 2vw;
+}
+
 .sum-price{
 	text-align: right;
 	padding: 2vw;
+	font-size: 5vw;
+	position: relative;
+	bottom: 3vw;
 	}
+
+.product-sum {
+	font-size: 4vw;
+}
+
 .pay-ment{
 	display: flex;
 	justify-content: center;
@@ -40,10 +55,10 @@ body{
 }
 .product-infomation{
 	text-align: left;
-	padding: 2vw 0 0 2vw;
+	padding: 5vw 0 0 2vw;
 }
 .product-img{
-	width: 15vw;
+	width: 20vw;
 	height: 15vw;
 	border: 1px solid;
 }
@@ -58,14 +73,19 @@ button{
 	text-decoration: none;
 	color: #008080;
 }
+
 .detail-btn button{	
 	border-width: 0.5vw;
 	border-color: #008080;
 	background-color: white;
 }
+
 #piece{
+	margin-right: 1vw;
+	margin-left: 1vw;
 	font-size: 5vw;
 }
+
 /*input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button{
 	-webkit-appearance: none;
