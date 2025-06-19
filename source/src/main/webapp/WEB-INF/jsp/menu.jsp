@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 					<img src="image/Logo.png" alt="商品画像">
 				</div>
 				<div class="product-info">
-					<p class="product-name">商品名</p>
+					<p class="product-name">${product.productName}</p>
 					<p>商品説明</p>
 					<p class="product-price">値段</p>
 				</div>

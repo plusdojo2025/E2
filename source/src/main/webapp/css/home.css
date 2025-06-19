@@ -5,8 +5,8 @@
   	top: 12vh;     /* 画面下から20px */
   	left: 5vw;      /* 画面右から20px */
   	z-index: 1000;    /* 他の要素より前面に */
-	width: 85px;       /* 幅 */
-  	height: 85px;       /* 高さ */
+	width: 60px;       /* 幅 */
+  	height: 60px;       /* 高さ */
   	font-size: 18px;    /* 文字の大きさ */
 }
 
@@ -61,9 +61,7 @@
 
 .modal-image{
 	width: 40vw;
-    max-height: 30vh;
     border-radius: 6px;
-    margin-bottom: 2vh;
     margin-left:5vw;
 }
 

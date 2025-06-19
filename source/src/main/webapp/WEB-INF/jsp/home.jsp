@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,80 +10,67 @@
 <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-<header>
-<div class="header-left">
-<img src="image/Logo.png" height="50" alt="ロゴ">
-</div>
-<div class="header-center">
-<p class="header-p">ホーム画面</p>
-</div>
-<div class="header-right">
-<button class="log"><img src="image/iconLogOut.png" height="35" alt="ロゴ"></button>
-</div>
-</header>
+	<header>
+		<div class="header-left">
+			<img src="image/Logo.png" height="50" alt="ロゴ">
+		</div>
+		<div class="header-center">
+			<p class="header-p">ホーム画面</p>
+		</div>
+		<div class="header-right">
+			<button class="log">
+				<img src="image/iconLogOut.png" height="35" alt="ロゴ">
+			</button>
+		</div>
+	</header>
 
+	<main>
+		<div class=QR-position>
+			<button class="QR-button">QR表示</button>
+		</div>
 
+		<div class=regist-position>
+			<button class=regist-button>商品追加</button>
+		</div>
 
-<main>
-<div class=QR-position>
-<button class="QR-button">QR表示</button>
-</div>
+		<!-- 写真ギャラリー部分 -->
+		<div class="photo-gallery">
+			<img src="image/Logo.png" alt="写真1" class="photo" data-photo-id="1">
+			<img src="image/Logo.png" alt="写真2" class="photo" data-photo-id="2">
+			<img src="image/iconCart.png" alt="写真3" class="photo"
+				data-photo-id="3">
+		</div>
 
-<div class=regist-position>
-<button class=regist-button>商品追加</button>
-</div>
+		<div id="modal" class="modal-overlay">
+			<div class="modal-content">
+				<span class="modal-close" id="closeModal">×</span> <img
+					id="modalImage" class="modal-image" src="" alt="選択された画像">
+				<form action="#" method="post">
 
-<!-- 写真ギャラリー部分 -->
-<div class="photo-gallery">
-    <img src="image/Logo.png" alt="写真1" class="photo" data-photo-id="1">
-    <img src="image/Logo.png" alt="写真2" class="photo" data-photo-id="2">
-    <img src="image/iconCart.png" alt="写真3" class="photo" data-photo-id="3">
-</div>
+					<input type="hidden" name="photoId" id="modalPhotoId"> <label
+						for="description">商品名</label><br> <input type="text"
+						name="productName" id="productId"><br>
+					<br> <label for="description">値段</label><br> <input
+						type="text" name="productPrice" id="Price"><br>
+					<br> <label>説明文</label><br> <input type="text"
+						name="productExplanation" id="Explanation"><br>
+					<br>
+					<button type="submit">登録</button>
+				</form>
 
-<div>
-<p>ちいかわ</p>
-<p>ちいかわ</p>
-<p>ちいかわ</p>
-<p>ちいかわ</p>
-<p>ちいかわ</p>
-<p>ちいかわ</p>
-<p>屍山血河</p>
-<p>ちいかわ</p>
-</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="footer-center">
+			<section>
+				<a href="#" class="btn_03">注文確認</a>
+			</section>
+		</div>
+	</footer>
 
-
-<div id="modal" class="modal-overlay">
-    <div class="modal-content">
-    
-        <span class="modal-close" id="closeModal">×</span>
-        
-        <img id="modalImage" class="modal-image" src="" alt="選択された画像" >
-        
-        <form action="#" method="post">
-        
-       		<input type="hidden" name="photoId" id="modalPhotoId">
-			<label for="description">商品名</label><br>
-            <input type="text" name="productName" id="productId"><br><br>
-            <label for="description">値段</label><br>
-            <input type="text" name="productPrice" id="Price"><br><br>
-            <label>説明文</label><br>
-            <input type="text" name="productExplanation" id="Explanation"><br><br>
-            <button type="submit">登録</button>    
-        </form>
-        
-    </div>
-</div>
-</main>
-<footer>
-<div class="footer-center">
- <section>
-    <a href="#" class="btn_03">注文確認</a>
-</section>
-</div>
-</footer>
-
-<script src="js/home.js"></script>
-<script src="js/main.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 </html>
