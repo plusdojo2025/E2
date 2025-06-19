@@ -25,12 +25,12 @@
 	</header>
 
 	<main>
-		<div class=QR-position>
+		<!--  <div class=QR-position>
 			<button class="QR-button">QR表示</button>
-		</div>
+		</div>-->
 
 		<div class=regist-position>
-			<button class=regist-button>商品追加</button>
+			<button class=regist-button id="openModal">商品追加</button>
 		</div>
 
 		<!-- 写真ギャラリー部分 -->
@@ -41,10 +41,15 @@
 				data-photo-id="3">
 		</div>
 
-		<div id="modal" class="modal-overlay">
+		<!-- 商品詳細表示用モーダル -->
+		<div id="editModal" class="edit-modal-overlay">
 			<div class="modal-content">
-				<span class="modal-close" id="closeModal">×</span> <img
-					id="modalImage" class="modal-image" src="" alt="選択された画像">
+			<span>商品情報の編集</span>
+				<span class="modal-close" id="closeEditModal">×</span>
+				 <span class="filelabel" title="ファイルの選択">
+				 <img id="modalImage" class="edit-modal-image" src="" alt="選択された画像"></span>
+					<input type="file" name="datafile" id="filesend">
+					
 				<form action="#" method="post">
 
 					<input type="hidden" name="photoId" id="modalPhotoId"> <label
@@ -55,11 +60,34 @@
 					<br> <label>説明文</label><br> <input type="text"
 						name="productExplanation" id="Explanation"><br>
 					<br>
-					<button type="submit">登録</button>
+					<button type="submit" class="registration">登録</button>
 				</form>
 
 			</div>
 		</div>
+		
+		<!-- 商品登録用モーダル -->
+		<div id="addModal" class="add-modal-overlay">
+			<div class="modal-content">
+			<span>商品の追加</span>
+				<span class="modal-close" id="closeAddModal">×</span> 
+				<input type="file" id="modalImage" class="add-modal-image">
+				<form action="#" method="post">
+
+					<input type="hidden" name="photoId" id="modalPhotoId"> <label
+						for="description">商品名</label><br> <input type="text"
+						name="productName" id="productId"><br>
+					<br> <label for="description">値段</label><br> <input
+						type="text" name="productPrice" id="Price"><br>
+					<br> <label>説明文</label><br> <input type="text"
+						name="productExplanation" id="Explanation"><br>
+					<br>
+					<button type="submit" class="registration">登録</button>
+				</form>
+
+			</div>
+		</div>
+		
 	</main>
 	<footer>
 		<div class="footer-center">

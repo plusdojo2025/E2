@@ -46,7 +46,7 @@
 
 
 /* 商品詳細の背景 */
-.modal-overlay {
+.edit-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -59,10 +59,11 @@
     z-index: 1000;
 }
 
-.modal-image{
-	width: 40vw;
+.edit-modal-image{
+	width: 45vw;
+	height: 45vw;
     border-radius: 6px;
-    margin-left:5vw;
+    margin-left:12vw;
 }
 
 
@@ -71,9 +72,31 @@
     background: white;
     padding: 20px;
     border-radius: 8px;
-    width: 50vW;
+    width: 70vW;
     position: relative;
 }
+
+/*商品追加の背景*/
+.add-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.add-modal-image{
+	width: 45vw;
+	height: 45vw;
+    border-radius: 6px;
+    margin-left:12vw;
+}
+
 
 /* 閉じるボタン */
 .modal-close {
@@ -84,6 +107,25 @@
     font-weight: bold;
 }
 
+#Explanation{
+	height: 20vw;
+}
+
+.registration{
+	margin-left: 22vw;
+	width: 25vw;
+	height: 10vw;
+	background-color: white;
+	color: black;
+	border-radius: 2vw;
+	}
+	
+input[type="text"]{
+	width: 65vw;	
+	height: 6vw;
+}
+
+	
 @media (max-width: 600px) {
     .photo-gallery img {
         width: 50vw;
