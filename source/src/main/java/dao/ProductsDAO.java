@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class ProductsDAO extends SuperDAO{
 
 			// 検索結果をコレクションに格納
 			while (r.next()) { // 結果がある場合のみオブジェクトを生成
-				Product product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"),r.getObject("created_at",LocalDateTime.class));
+				Product product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"));
 				productList.add(product);
 			}
 			
@@ -240,7 +239,7 @@ public class ProductsDAO extends SuperDAO{
 
 			// 検索結果をコレクションに格納
 			while (r.next()) { // 結果がある場合のみオブジェクトを生成
-				Product product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"),r.getObject("created_at",LocalDateTime.class));
+				Product product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"));
 				productList.add(product);
 			}
 			

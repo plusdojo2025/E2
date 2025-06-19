@@ -1,6 +1,5 @@
 package dto;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 public class Product implements Serializable {
 
 	private int productId;
@@ -9,7 +8,6 @@ public class Product implements Serializable {
 	private boolean isSoldOut;
 	private String productDetail;
 	private String imageUrl;
-	private LocalDateTime createdAt;
 	public int getProductId() {
 		return productId;
 	}
@@ -46,19 +44,13 @@ public class Product implements Serializable {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
 	
 	public Product() {
-		this(0,"",0,false,"","",null);
+		this(0,"",0,false,"","");
 	}
 	
 	public Product(int productId, String productName, int price, boolean isSoldOut,
-			String productDetail, String imageUrl, LocalDateTime createdAt) {
+			String productDetail, String imageUrl) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -66,7 +58,6 @@ public class Product implements Serializable {
 		this.isSoldOut = isSoldOut;
 		this.productDetail = productDetail;
 		this.imageUrl = imageUrl;
-		this.createdAt = createdAt;
 	}
 	
 }

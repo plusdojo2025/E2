@@ -22,34 +22,7 @@
 	</header>
 
 	<main>
-		<div class="menu-container">
-			<div class="product">
-				<div class="product-picture">
-					<img src="image/Logo.png" alt="商品画像">
-				</div>
-				<div class="product-info">
-					<p class="product-name">${product.productName}</p>
-					<p>商品説明</p>
-					<p class="product-price">値段</p>
-				</div>
-			</div>
-			<div class="product">
-				<div class="product-info">
-					<p class="product-name">商品名</p>
-					<p>商品説明</p>
-					<p class="product-price">値段</p>
-				</div>
-			</div>
-			<div class="product">
-				<div class="product-picture">
-					<img src="image/Logo.png" alt="商品画像">
-				</div>
-				<div class="product-info">
-					<p class="product-name">商品名</p>
-					<p>商品説明</p>
-					<p class="product-price">値段</p>
-				</div>
-			</div>
+		<div class="menu-container" id="menuArea">
 		</div>
 	</main>
 
@@ -65,6 +38,7 @@
 			</button>
 		</div>
 	</footer>
+	<script src="js/menu.js"></script>
 </body>
 </html>
 

@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class OrdersDAO extends SuperDAO{
 
 			// 検索結果をコレクションに格納
 			while (r.next()) { // 結果がある場合のみオブジェクトを生成
-				Order order = new Order(r.getInt("order_id"),r.getString("order_code"),r.getBoolean("is_paid"),r.getBoolean("is_complete"),r.getBoolean("is_handed"),r.getInt("total_amount"),r.getObject("created_at",LocalDateTime.class));
+				Order order = new Order(r.getInt("order_id"),r.getString("order_code"),r.getBoolean("is_paid"),r.getBoolean("is_complete"),r.getBoolean("is_handed"),r.getInt("total_amount"));
 				orderList.add(order);
 			}
 			

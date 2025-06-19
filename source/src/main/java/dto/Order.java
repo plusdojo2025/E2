@@ -1,6 +1,5 @@
 package dto;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 public class Order implements Serializable {
 
 	private int orderId;
@@ -9,7 +8,6 @@ public class Order implements Serializable {
 	private boolean isComplete;
 	private boolean isHanded;
 	private int totalAmount;
-	private LocalDateTime createdAt;
 	public int getOrderId() {
 		return orderId;
 	}
@@ -46,19 +44,13 @@ public class Order implements Serializable {
 	public void setTotalAmount(int totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
 	
 	public Order() {
-		this(0,"",false,false,false,0,null);
+		this(0,"",false,false,false,0);
 	}
 	
 	public Order(int orderId, String orderCode, boolean isPaid, boolean isComplete, boolean isHanded,
-			int totalAmount, LocalDateTime createdAt) {
+			int totalAmount) {
 		super();
 		this.orderId = orderId;
 		this.orderCode = orderCode;
@@ -66,7 +58,5 @@ public class Order implements Serializable {
 		this.isComplete = isComplete;
 		this.isHanded = isHanded;
 		this.totalAmount = totalAmount;
-		this.createdAt = createdAt;
 	}
-	
 }
