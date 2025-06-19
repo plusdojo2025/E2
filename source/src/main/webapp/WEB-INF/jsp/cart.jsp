@@ -81,7 +81,6 @@
 	<script>
 		'use strict'
 
-		if (changeNum(1))
 	</script>
 </body>
 </html>

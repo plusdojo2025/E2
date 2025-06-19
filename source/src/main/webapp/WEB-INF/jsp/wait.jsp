@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/customer.css">
 </head>
 
-<body>
+<body class="wait-body">
 
 	<header>
 		<div class="header-left">
@@ -37,38 +37,36 @@
 				お会計の準備が出来ましたら、<br> この画面を店員にお見せください。
 			</p>
 		</div>
-		<p class="status">未決済</p>
+		<div class="status"><span>未清算</span></div>
+		<button id="modal(1)">open</button>
 
 		<!--モーダル1つ目の中身-->
-		<div class="modal modal-first">
+		<div id="modal" class="modal modal-hidden modal-first">
 			<div class="modal-container">
-				<div class="number">
-					ご注文番号&emsp;<span>000</span>
-				</div>
 				<div class="message">
 					<div>
 						ご注文が完了しました。<br> <br> 商品の準備が整うまで、<br> いましばらくお待ちください。
 					</div>
 				</div>
+				<div class="status"><span>清算済</span></div>
+				<button id="modal(2)">モーダルopen</button>
 			</div>
 		</div>
 
 		<!--モーダル2つ目の中身-->
-		<div class="modal modal-second">
+		<div id="modal" class="modal modal-second">
 			<div class="modal-second">
-				<div class="number">
-					ご注文番号&emsp;<span>000</span>
-				</div>
 				<div class="message">
 					<div>
 						商品が完成いたしました。<br> <br>商品提供口までお越しください。
 					</div>
 				</div>
+				<button id="modal(3)">モーダルopen</button>
 			</div>
 		</div>
 
 		<!--モーダル3つ目の中身-->
-		<div class="modal modal-third">
+		<div id="modal" class="modal modal-third">
 			<div class="modal-third">
 				<div class="message">
 					<div>
@@ -95,9 +93,29 @@
 			</button>
 		</div>
 	</footer>
-	
+
 	<script>
-		
+		var modal = document.getElementById('modal');
+		var btn = document.getElementById('modal(1)');
+		var close = modal.getElementsByClassName('modal(2)')[0];
+
+		//ボタンをクリックするとモーダル表示
+		btn.onclick = function() {
+			modal.style.display = 'block';
+		};
+
+		// ×を押すとモーダルを閉じる
+		close.onclick = function() {
+			modal.style.display = 'none';
+		};
+
+		// モーダルの外側を触るとモーダルを閉じる
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				// Which means he clicked somewhere in the modal (background area), but not target = modal-content
+				modal.style.display = 'none';
+			}
+		};
 	</script>
 </body>
 </html>
