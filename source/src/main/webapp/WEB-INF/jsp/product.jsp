@@ -11,7 +11,6 @@
 <body>
 
 <header>
-	<img src="image/crepe.png">
 	<div class="header-left">
 		<input type="submit" name="moveMenu" value="MENU" class="mb">
 	</div>

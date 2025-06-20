@@ -4,6 +4,9 @@ body {
 	background-color: #faf2d6;
 	margin: 0;
 	margin-bottom: 22vw;
+	background-image: radial-gradient(circle, #bacfff80 1vw, transparent 1vw);
+	background-position: 0 0;
+	background-size: 20vw 20vw;
 }
 
 .container {
@@ -25,23 +28,25 @@ body {
 
 .name {
 	text-align: left;
+	margin-bottom: 0;
 	margin-left: 10vw;
 }
 
 .box {
 	border-top: 2px solid #515a5a;
 	border-bottom: 2px solid #515a5a;
-	margin-right: 9vw;
-	margin-left: 9vw;
-	padding: 5vw;
+	margin: 0 9vw 0 9vw;
+	padding: 2vw;
 	text-align: left;
 	
 }
 
 .detail {
 	font-size: 5vw;
-	margin: 8vw 0 5vw 0;
+	padding-top:0.5vw; 
+	margin: 8vw 8vw 5vw 8vw;
 	justify-content: center;
+	background-color: rgba(255,255,255, 0.5);
 }
 
 .total {
@@ -53,19 +58,17 @@ body {
 	justify-content: right;
 }
 
-button{
+
+.detail-btn button{	
+	border-width: 0.5vw;
+	border-color: #008080;
+	background-color: white;
 	border-radius: 5vw;
 	width: 7vw;
 	height: 7vw;
 	font-size: 5vw;
 	text-decoration: none;
 	color: #008080;
-}
-
-.detail-btn button{	
-	border-width: 0.5vw;
-	border-color: #008080;
-	background-color: white;
 }
 
 .cart-btn {

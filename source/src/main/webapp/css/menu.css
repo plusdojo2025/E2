@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+body {
+	background-color: #faf2d6;
+	background-image: radial-gradient(circle, #bacfff80 1vw, transparent 1vw);
+	background-position: 0 0;
+	background-size: 20vw 20vw;
+}
+
 .menu-container {
 	display: flex;
 	flex-direction: column;
@@ -13,11 +20,12 @@
 	display: flex;
 	flex-flow: column;
 	box-sizing: border-box;
+	background-color: #fffde7;
 	border: 1px solid #ed7d31;
 	border-radius: 10px;
 	padding: 4vw;
 	box-sizing: border-box;
-	width: 80vw
+	width: 55vw;
 }
 
 .product-info {
@@ -26,14 +34,24 @@
 
 .product-picture {
 	text-align: center;
+	
 }
 
 .product-picture img {
-	width: 60vw;
+	width: 40vw;
 }
 
 .product-price {
 	text-align: right;
+	font-size: 4vw;
+}
+
+.product-name {
+	font-size: 4vw;
+}
+
+.product-detail {
+	font-size: 4vw;
 }
 
 /*
