@@ -8,10 +8,6 @@ table, th, td {
 	text-align: center;
 }
 
-th, td {
-	min-width: 8vw;
-}
-
 .order-container {
 	width: 80vw;
 	padding: 0 10vw;
