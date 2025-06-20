@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,10 +27,7 @@ public class OrderServlet extends HttpServlet {
             // すべての注文＋商品数を取得
             List<OrderDTO> allOrders = dao.fetchOrdersWithProducts();
 
-            // フラグがすべて済になっている注文を除外
-            List<OrderDTO> orders = allOrders.stream()
-                .filter(o -> !(o.isPaid() && o.isComplete() && o.isHanded()))
-                .collect(Collectors.toList());
+            List<OrderDTO> orders = dao.fetchOrdersWithProducts();
 
             // 表示する商品のヘッダーを決める
             Set<String> productNamesSet = new LinkedHashSet<>();
