@@ -2,32 +2,47 @@
  * 
  */
  
- 		var modal = document.getElementById('modal');
-		var btn = document.getElementById('modal(1)');
-		var btn2 = modal.getElementById('modal(2)');
-		var messageDefalut = document.getElementById('message-defalut')
+ 		const modalFirst = document.getElementById('modalFirst');
+ 		const modalSecond = document.getElementById('modalSecond');
+ 		const modalThird = document.getElementById('modalThird');
+		const btn = document.getElementById('modal(1)');
+		const btn2 = document.getElementById('modal(2)');
+		const btn3 = document.getElementById('modal(3)');
+		const messageDefault = document.getElementById('messageDefault');
+		const number = document.getElementById('number');
+		const modalClose = document.getElementById('modalClose');
 
 
-				//ボタンをクリックするとモーダル表示
-		btn.onclick = function() {
-			modal.style.display = 'flex';
-		};
+		//btmを押すとモーダルとデフォルト文の切り替わり
+		btn.addEventListener('click', () => {
+			modalFirst.style.display = 'block';
+			messageDefault.style.display = 'none';
+		});
 		
-		btn.onclick = function(){
-			messageDefalut.style.display = 'none'
-		};
+		//切り替わった後に表示されるbtn2を押すとモーダル1とモーダル2が切り替わる
+		btn2.addEventListener('click', () => {
+			modalSecond.style.display = 'flex';
+			modalFirst.style.display = 'none';
+		});
 		
-		
+		//切り替わった後に表示されるbtn2を押すとモーダル1とモーダル2が切り替わる
+		btn3.addEventListener('click', () => {
+			modalThird.style.display = 'flex';
+			modalSecond.style.display = 'none';
+			number.style.display='none';
+		});
 
-		// ×を押すとモーダルを閉じる
-		btn2.onclick = function() {
-			modal.style.display = 'none';
-		};
+
+		// OKを押すとモーダルを閉じる
+		modalClose.addEventListener('click', () => {
+			modalThird.style.display = 'none';
+			messageDefault.style.display = 'block';
+		});
 
 		// モーダルの外側を触るとモーダルを閉じる
 		window.onclick = function(event) {
-			if (event.target == modal) {
+			if (event.target == modal(3)) {
 				// Which means he clicked somewhere in the modal (background area), but not target = modal-content
-				modal.style.display = 'none';
+				modalThird.style.display = 'none';
 			}
 		};

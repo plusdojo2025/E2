@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .wait-body{	
 	margin: 0;
 	font-size: 6vw;
@@ -11,21 +12,26 @@
 	border: 1px solid black;
 	padding:0 10vw;
 }
+
+/*モーダル内のテキストのレイアウト*/
 .message{
-	width: 70vw;
-	height: 30vw;
+	width: 80vw;
+	height: 50vw;
 	margin: auto auto auto auto;
 	padding-top: 4vw; 
 	padding-bottom: 2vw;
 	border: 1px solid black;
 	text-align: center;
 }
+/*デフォルトメッセージのレイアウト*/
 .message-top{
 	text-align: center;
 }
+/*合計金額のレイアウト*/
 .sum-price{
 	text-align: center;
 }
+/*支払い状態のレイアウト*/
 .status{
 	display: flex;
 	justify-content: center;
@@ -36,21 +42,36 @@
 	border: 5px dotted #008080;
 }
 
+
 /* ******************************************
 			以下モーダル処理（頑張ります泣）
 ****************************************** */
 /*モーダル全体を非表示にする*/
-#modal{
+.modal{
 	display: none;
 	position: fixed;
 	top:0;
 	left: 0;
-	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	background-color: none;
+	z-index: 1000;
 }
 /*モーダルを表示した時のスタイル*/
 .modal-container{
 	position: fixed;
 	top:50%;
 	left: 50%;
-	transform: translate(-50%, -50%)
+	transform: translate(-50%, -50%);
 }
+#messageDefault{
+	display: block;
+}
+#modal-close-container{
+	text-align: right;
+	padding: 2vw 2vw 0 0;
+}
+#modalClose{
+	margin-bottom: 5vw;
+}
+

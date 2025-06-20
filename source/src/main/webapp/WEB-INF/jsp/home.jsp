@@ -79,7 +79,7 @@
 				<label>
 				<span class="filelabel" title="ファイルの選択">
 				 <img id="modalImage" class="add-modal-image" src=""></span>
-					<input type="file" name="datafile" class="filesend" accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">				
+					<input type="file" name="datafile" class="filesend" accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
 				</label>
 				<form action="#" method="post">
 
