@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +33,9 @@
                     <th>支払</th>
                     <th>作成</th>
                     <th>受渡</th>
+                    <c:forEach var="Order" items="${orderList}">
+                    	<th></th>
+                    </c:forEach>
                     <th>ちくわ</th>
                     <th>大根</th>
                     <th>水</th>

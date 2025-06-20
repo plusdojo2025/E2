@@ -12,7 +12,7 @@ import dto.OrderProduct;
 
 public class OrderProductsDAO extends SuperDAO{
 	
-	public List<OrderProduct> getOrderProductData(int orderProductId){
+	public List<OrderProduct> getDataAll(){
 		
 		List<OrderProduct> orderProductList = new ArrayList<OrderProduct>();
 
@@ -28,10 +28,8 @@ public class OrderProductsDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL作成
-			String sql = "SELECT * FROM ordered_products WHERE ordered_product_id = ?";
+			String sql = "SELECT * FROM ordered_products";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			
-			pStmt.setInt(1, orderProductId);
 
 			// SQLを実行して検索結果を取得
 			ResultSet r = pStmt.executeQuery();
