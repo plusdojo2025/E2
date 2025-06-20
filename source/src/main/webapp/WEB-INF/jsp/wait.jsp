@@ -21,13 +21,14 @@
 		<div class="header-right"></div>
 	</header>
 
-	<main>
+	<main >
 		<div class="number">
 			<p>
 				ご注文番号&emsp; <span>000</span>
 			</p>
 		</div>
 		<br>
+		<div id="message-defalut">
 		<div class="sum-price">
 			<p>お支払金額</p>
 			<span class="price">&yen;0000</span>
@@ -38,6 +39,7 @@
 			</p>
 		</div>
 		<div class="status"><span>未清算</span></div>
+		</div>
 		<button id="modal(1)">open</button>
 
 		<!--モーダル1つ目の中身-->
@@ -94,28 +96,6 @@
 		</div>
 	</footer>
 
-	<script>
-		var modal = document.getElementById('modal');
-		var btn = document.getElementById('modal(1)');
-		var close = modal.getElementsByClassName('modal(2)')[0];
-
-		//ボタンをクリックするとモーダル表示
-		btn.onclick = function() {
-			modal.style.display = 'block';
-		};
-
-		// ×を押すとモーダルを閉じる
-		close.onclick = function() {
-			modal.style.display = 'none';
-		};
-
-		// モーダルの外側を触るとモーダルを閉じる
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				// Which means he clicked somewhere in the modal (background area), but not target = modal-content
-				modal.style.display = 'none';
-			}
-		};
-	</script>
+	<script src="js/handed.js"></script>
 </body>
 </html>

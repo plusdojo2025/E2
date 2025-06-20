@@ -44,12 +44,15 @@
 		<!-- 商品詳細表示用モーダル -->
 		<div id="editModal" class="edit-modal-overlay">
 			<div class="modal-content">
-			<span>商品情報の編集</span>
+			<div class="flaot-title">
+			<span class="title">商品情報の編集</span>
+			</div>
 				<span class="modal-close" id="closeEditModal">×</span>
+				<label>
 				 <span class="filelabel" title="ファイルの選択">
 				 <img id="modalImage" class="edit-modal-image" src="" alt="選択された画像"></span>
-					<input type="file" name="datafile" id="filesend">
-					
+					<input type="file" name="datafile" class="filesend" accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
+				</label>
 				<form action="#" method="post">
 
 					<input type="hidden" name="photoId" id="modalPhotoId"> <label
@@ -69,16 +72,26 @@
 		<!-- 商品登録用モーダル -->
 		<div id="addModal" class="add-modal-overlay">
 			<div class="modal-content">
+			<div class="flaot-title">
 			<span>商品の追加</span>
+			</div>
 				<span class="modal-close" id="closeAddModal">×</span> 
-				<input type="file" id="modalImage" class="add-modal-image">
+				<label>
+				<span class="filelabel" title="ファイルの選択">
+				 <img id="modalImage" class="add-modal-image" src=""></span>
+					<input type="file" name="datafile" class="filesend" accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">				
+				</label>
 				<form action="#" method="post">
 
-					<input type="hidden" name="photoId" id="modalPhotoId"> <label
-						for="description">商品名</label><br> <input type="text"
-						name="productName" id="productId"><br>
-					<br> <label for="description">値段</label><br> <input
-						type="text" name="productPrice" id="Price"><br>
+					 <div class="column">
+					<input type="hidden" name="photoId" id="modalPhotoId">
+					 <label for="description">商品名</label><br>
+					 <input type="text" name="productName" id="productId"><br>
+					 
+					<div id="name-price"><br> <label for="description">値段</label><br> <input
+						type="text" name="productPrice" id="Price"><br></div>
+					 </div>
+						
 					<br> <label>説明文</label><br> <input type="text"
 						name="productExplanation" id="Explanation"><br>
 					<br>

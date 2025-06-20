@@ -11,6 +11,8 @@ const photoElements = document.querySelectorAll('.photo');
 const modalPhotoId = document.getElementById('modalPhotoId');
 const openModal = document.getElementById('openModal');
 console.log(closeAddModal.textContent);
+
+
 // 写真クリック時に詳細表示
 photoElements.forEach(photo => {
     photo.addEventListener('click', () => {
@@ -45,6 +47,7 @@ closeAddModal.addEventListener('click', () => {
     addModal.style.display = 'none';
 });
 
+//追加　閉じる処理
 closeEditModal.addEventListener('click', () => {
     editModal.style.display = 'none';
 });
