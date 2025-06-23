@@ -67,7 +67,6 @@ footer{
 	z-index: 100;
 	right: 39vw;
 	font-weight: bold;
-	background-color: rgba(255,255,255, 0.5);
 	height: 13vw;
 	width: 15vw;
 }
@@ -130,10 +129,10 @@ footer{
 
 .img {
 	position: relative;
-	top: 13px; 
-	right: 25px;
-	width: 28vw;
-	height: 28vw;
+	top: 5px; 
+	right: 21px;
+	width: 47vw;
+	height: 42vw;
 }
 
 /*プラスボタンとマイナスボタンのデザインです。*/

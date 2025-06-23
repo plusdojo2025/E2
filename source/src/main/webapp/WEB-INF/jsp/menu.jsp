@@ -16,7 +16,7 @@
 			<input type="submit" name="moveMenu" value="MENU" class="mb">
 		</div>
 		<div class="header-center">
-			<p><img src="image/crshop.png" class="img"></p>
+			<p><img src="image/logo3.png" class="img"></p>
 		</div>
 		<div class="header-right"></div>
 	</header>
