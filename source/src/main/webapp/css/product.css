@@ -14,8 +14,9 @@ body {
 }
 
 .img {
+
 	margin-right: 9vw;
-	margin-left: 9vw;
+	margin-left: 27vw;
 	margin-top: 23vw;
 }
 
@@ -23,7 +24,7 @@ body {
 	max-height: 50vw;
 	max-width: 50vw;
 	border: 2px solid black;
-	border-radius: 3vw;
+	border-radius: 3vw;	
 }
 
 .name {
@@ -44,13 +45,14 @@ body {
 .detail {
 	font-size: 5vw;
 	padding-top:0.5vw; 
-	margin: 8vw 8vw 5vw 8vw;
+	margin: 15vw 8vw 5vw 8vw;
 	justify-content: center;
 	background-color: rgba(255,255,255, 0.5);
+	
 }
 
 .total {
-	margin-right: 26vw;
+	margin-right: 10vw;
 }
 
 .detail-btn {

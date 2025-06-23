@@ -68,7 +68,8 @@ footer{
 	right: 39vw;
 	font-weight: bold;
 	height: 13vw;
-	width: 15vw;
+	width: 37vw;
+	margin-bottom: 23vw;
 }
 
 .header-right{
@@ -129,8 +130,8 @@ footer{
 
 .img {
 	position: relative;
-	top: 5px; 
-	right: 21px;
+	top: 12vw; 
+	left: 7vw;
 	width: 47vw;
 	height: 42vw;
 }
