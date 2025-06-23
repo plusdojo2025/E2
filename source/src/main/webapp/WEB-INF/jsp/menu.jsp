@@ -13,7 +13,7 @@
 
   <header>
     <div class="header-left">
-      <form action="/E2/MenuServlet" method="get">
+      <form action="/e2/MenuServlet" method="get">
         <input type="submit" name="moveMenu" value="MENU" class="mb">
       </form>
     </div>
