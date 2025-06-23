@@ -28,7 +28,7 @@ public class OrdersDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL作成
-			String sql = "SELECT * FROM Orders";
+			String sql = "SELECT * FROM orders";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			// SQLを実行して検索結果を取得

@@ -26,9 +26,6 @@
 	</header>
 
 	<main>
-		<!--  <div class=QR-position>
-			<button class="QR-button">QR表示</button>
-		</div>-->
 
 		<div class=regist-position>
 			<button class=regist-button id="openModal">商品追加</button>
@@ -36,9 +33,9 @@
 
 		<!-- 写真ギャラリー部分 -->
 		<div class="photo-gallery">
-			<img src="image/Logo.png" alt="写真1" class="photo" data-photo-id="1">
-			<img src="image/Logo.png" alt="写真2" class="photo" data-photo-id="2">
-			<img src="image/iconCart.png" alt="写真3" class="photo"
+			<img src="image/.png" alt="写真1" class="photo" data-photo-id="1">
+			<img src="image/.png" alt="写真2" class="photo" data-photo-id="2">
+			<img src="image/.png" alt="写真3" class="photo"
 				data-photo-id="3">
 		</div>
 
@@ -65,6 +62,7 @@
 						name="productExplanation" id="Explanation"><br>
 					<br>
 					<button type="submit" class="registration">登録</button>
+					<button type="submit" class="delete">削除</button>
 				</form>
 
 			</div>
