@@ -22,24 +22,27 @@
 	</header>
 
 	<main>
-		<div id="number" class="number">
-			<p>
-				ご注文番号&emsp; <span>000</span>
-			</p>
-		</div>
-		<br>
-		<div id="messageDefault">
-			<div class="sum-price">
-				<p>お支払金額</p>
-				<span class="price">&yen;0000</span>
-			</div>
-			<div class="message-top">
+
+		<div id="messageDefaultNumber">
+			<div id="number" class="number">
 				<p>
-					お会計の準備が出来ましたら、<br> この画面を店員にお見せください。
+					ご注文番号&emsp; <span>000</span>
 				</p>
 			</div>
-			<div class="status">
-				<span>未清算</span>
+			<br>
+			<div id="messageDefault">
+				<div class="sum-price">
+					<p>お支払金額</p>
+					<span class="price">&yen;0000</span>
+				</div>
+				<div class="message-top">
+					<p>
+						お会計の準備が出来ましたら、<br> この画面を店員にお見せください。
+					</p>
+				</div>
+				<div class="status">
+					<span>未清算</span>
+				</div>
 			</div>
 		</div>
 		<button id="modal(1)">open</button>
@@ -48,14 +51,14 @@
 		<div id="modalFirst" class="modal modal-hidden modal-first">
 			<div class="modal-container">
 				<div class="message">
-					<div class="text-message">
+					<div id="text-message">
+			<button id="modal(2)">モーダルopen</button>
 						ご注文が完了しました。<br> <br> 商品の準備が整うまで、<br> いましばらくお待ちください。
 					</div>
 				</div>
-				<div class="status">
-					<span>清算済</span>
-				</div>
-				<button id="modal(2)">モーダルopen</button>
+			</div>
+			<div class="status">
+				<span>清算済</span>
 			</div>
 		</div>
 
@@ -63,11 +66,11 @@
 		<div id="modalSecond" class="modal modal-second">
 			<div class="modal-container">
 				<div class="message">
-					<div class="text-message">
+					<div id="text-message">
+				<button id="modal(3)">モーダルopen</button>
 						商品が完成いたしました。<br> <br>商品提供口までお越しください。
 					</div>
 				</div>
-				<button id="modal(3)">モーダルopen</button>
 			</div>
 		</div>
 
@@ -75,7 +78,8 @@
 		<div id="modalThird" class="modal modal-third">
 			<div class="modal-container">
 				<div class="message">
-					<div class="text-message">
+
+					<div id="text-message">
 						<strong>お買い上げいただき<br> ありがとうございました！
 						</strong>
 						<div>
@@ -83,7 +87,7 @@
 						</div>
 					</div>
 					<div id="modal-close-container">
-					<span id="modalClose">OK</span>
+						<span id="modalClose">OK</span>
 					</div>
 				</div>
 			</div>

@@ -9,9 +9,9 @@
 		const btn2 = document.getElementById('modal(2)');
 		const btn3 = document.getElementById('modal(3)');
 		const messageDefault = document.getElementById('messageDefault');
+//		const messageDefaultNumber = document.getElemntById('messageDefaultNumber');
 		const number = document.getElementById('number');
 		const modalClose = document.getElementById('modalClose');
-
 
 		//btmを押すとモーダルとデフォルト文の切り替わり
 		btn.addEventListener('click', () => {
@@ -37,12 +37,14 @@
 		modalClose.addEventListener('click', () => {
 			modalThird.style.display = 'none';
 			messageDefault.style.display = 'block';
+			number.style.display ='block';
 		});
 
 		// モーダルの外側を触るとモーダルを閉じる
-		window.onclick = function(event) {
-			if (event.target == modal(3)) {
-				// Which means he clicked somewhere in the modal (background area), but not target = modal-content
-				modalThird.style.display = 'none';
-			}
-		};
+		window.addEventListener('click', (e) => {
+    if (e.target === modalThird) {
+        modalThird.style.display = 'none';
+        messageDefault.style.display = 'block';
+		number.style.display ='block';
+    }
+    });
