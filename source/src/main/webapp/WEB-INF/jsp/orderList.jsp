@@ -79,7 +79,7 @@
 	<footer>
 		<div class="footer-center">
 			<section>
-				<a href="#" class="btn_03">ホームメニュー</a>
+				<a href="<c:url value='/HomeServlet'/>" class="btn_03">ホームメニュー</a>
 			</section>
 		</div>
 	</footer>

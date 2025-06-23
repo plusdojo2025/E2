@@ -13,7 +13,10 @@
 
 	<header>
 		<div class="header-left">
-			<input type="submit" name="moveMenu" value="MENU" class="mb">
+			<form action="${pageContext.request.contextPath}/MenuServlet"
+				method="get">
+				<input type="submit" name="moveMenu" value="MENU" class="mb">
+			</form>
 		</div>
 		<div class="header-center">
 			<p>○○店</p>
@@ -52,7 +55,7 @@
 			<div class="modal-container">
 				<div class="message">
 					<div id="text-message">
-			<button id="modal(2)">モーダルopen</button>
+						<button id="modal(2)">モーダルopen</button>
 						ご注文が完了しました。<br> <br> 商品の準備が整うまで、<br> いましばらくお待ちください。
 					</div>
 				</div>
@@ -67,7 +70,7 @@
 			<div class="modal-container">
 				<div class="message">
 					<div id="text-message">
-				<button id="modal(3)">モーダルopen</button>
+						<button id="modal(3)">モーダルopen</button>
 						商品が完成いたしました。<br> <br>商品提供口までお越しください。
 					</div>
 				</div>

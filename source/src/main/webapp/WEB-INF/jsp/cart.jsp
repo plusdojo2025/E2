@@ -14,7 +14,10 @@
 	<header>
 		<img src="image/crepe.png">
 		<div class="header-left">
-			<input type="submit" name="moveMenu" value="MENU" class="mb">
+			<form action="${pageContext.request.contextPath}/MenuServlet"
+				method="get">
+				<input type="submit" name="moveMenu" value="MENU" class="mb">
+			</form>
 		</div>
 		<div class="header-center">
 			<p>○○店</p>
@@ -59,7 +62,8 @@
 				合計&emsp;&emsp;&yen;&nbsp;<span class="total-monetary">0000</span>
 			</p>
 		</div>
-		<form>
+		<form action="${pageContext.request.contextPath}/HandedServlet"
+			method="post">
 			<div class="pay-ment">
 				<a><input type="submit" value="支払画面へ"></a>
 			</div>
@@ -81,7 +85,6 @@
 
 	<script>
 		'use strict'
-
 	</script>
 </body>
 </html>
