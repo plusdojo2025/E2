@@ -17,7 +17,7 @@
 	margin-bottom: 8px;
 }
 
-.check-text{
+.check-text {
 	font-size: 15px;
 }
 </style>
@@ -39,8 +39,8 @@
 	<!-- 全件表示トグル -->
 
 	<div class="order-container">
-		<label> 
-			<input type="checkbox" id="showAll" checked /> <span class="check-text">全件表示</span>
+		<label> <input type="checkbox" id="showAll" checked /> <span
+			class="check-text">全件表示</span>
 		</label>
 		<table class="order-list" id="orderTable" border="1" cellpadding="5"
 			cellspacing="0">
@@ -83,47 +83,60 @@
 			</section>
 		</div>
 	</footer>
-	<script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const showAll = document.getElementById('showAll');
-      const table   = document.getElementById('orderTable');
-      // 行フィルタ関数
-      function applyFilter() {
-        const show = showAll.checked;
-        table.querySelectorAll('tbody tr').forEach(row => {
-          const cells = row.querySelectorAll('.flag-cell');
-          const allTrue = Array.from(cells)
-                               .every(c => c.textContent === '◯');
-          row.style.display = (allTrue && !show) ? 'none' : '';
-        });
-      }
-      showAll.addEventListener('change', applyFilter);
-      applyFilter(); // 初期状態
+<script>
+  const contextPath = '${pageContext.request.contextPath}';
 
-      // フラグ切替イベント
-      table.querySelectorAll('.flag-cell').forEach(cell => {
-        cell.addEventListener('click', () => {
-          const row = cell.closest('tr');
-          const orderId = row.dataset.orderId;
-          const flag    = cell.dataset.flag;
-          fetch(`${pageContext.request.contextPath}/toggleFlag`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `orderId=${orderId}&flag=${flag}`
-          })
-          .then(res => res.json())
-          .then(json => {
-            if (json.success) {
-              cell.textContent = json.newValue ? '◯' : '✕';
-              applyFilter();
-            } else {
-              alert('更新に失敗しました');
-            }
-          })
-          .catch(() => alert('通信エラー'));
-        });
+  document.addEventListener('DOMContentLoaded', () => {
+    const showAll = document.getElementById('showAll');
+    const table   = document.getElementById('orderTable');
+
+    function applyFilter() {
+      const show = showAll.checked;
+      table.querySelectorAll('tbody tr').forEach(row => {
+        const cells = row.querySelectorAll('.flag-cell');
+        const allTrue = Array.from(cells).every(c => c.textContent === '◯');
+        row.style.display = (allTrue && !show) ? 'none' : '';
+      });
+    }
+
+    showAll.addEventListener('change', applyFilter);
+    applyFilter();
+
+    table.querySelectorAll('.flag-cell').forEach(cell => {
+      cell.addEventListener('click', () => {
+        const row = cell.closest('tr');
+        const orderId = row.dataset.orderId;
+        const flag    = cell.dataset.flag;
+
+        // ✅ 値の確認ログ（任意）
+        console.log('orderId:', orderId);
+        console.log('flag:', flag);
+
+        // ✅ 安全なURLエンコード形式で送信
+        const params = new URLSearchParams();
+        params.append('orderId', orderId);
+        params.append('flag', flag);
+
+        fetch(`/E2/toggleFlag`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: params
+        })
+        .then(res => res.json())
+        .then(json => {
+          if (json.success) {
+            cell.textContent = json.newValue ? '◯' : '✕';
+            applyFilter();
+          } else {
+            alert('更新に失敗しました');
+          }
+        })
+        .catch(() => alert('通信エラー'));
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
