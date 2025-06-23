@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="dto.Product" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,24 +24,27 @@
 </header>
 
 <div class="container">
-	<div class="img">
-		<img src="image/azi.png" class="eximage">
-	</div>
-	<div class="detail">
-		<p class="name">商品名</p>
-		<p class="box">商品説明:天和、字一色、大四喜、四暗刻単騎</p>
-	</div>
-	<div class="detail">
-		<span class="total">合計金額:<a>100</a>円</span>
-		<span class="detail-btn">
-			<button onclick="changeNum(-1)">-</button>
-			<span id="piece">1</span>
-			<button onclick="changeNum(1)">+</button>
-		</span>
-	</div>
-	<div class="cart-btn">
-		<input type="button" name="inCart" value="カートに追加">
-	</div>
+  <div class="img">
+    <img src="${pageContext.request.contextPath}/image/${product.imageUrl}"
+         class="eximage" alt="${product.productName}">
+  </div>
+  <div class="detail">
+    <p class="name">${product.productName}</p>
+    <p class="box">${product.productDetail}</p>
+  </div>
+  <div class="detail">
+    <span class="total">
+      合計金額:<a>${product.price}</a>円
+    </span>
+    <span class="detail-btn">
+      <button onclick="changeNum(-1)">-</button>
+      <span id="piece">1</span>
+      <button onclick="changeNum(1)">+</button>
+    </span>
+  </div>
+  <div class="cart-btn">
+    <input type="button" name="inCart" value="カートに追加">
+  </div>
 </div>
 
 <footer>

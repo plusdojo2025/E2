@@ -12,9 +12,9 @@ import dto.Product;
 
 public class ProductsDAO extends SuperDAO{
 	
-	public List<Product> getProductData(int productId){
+	public Product getProductData(int productId){
 		
-		List<Product> productList = new ArrayList<Product>();
+		Product product = new Product();
 
 		Connection conn = null;
 
@@ -36,17 +36,15 @@ public class ProductsDAO extends SuperDAO{
 			// SQLを実行して検索結果を取得
 			ResultSet r = pStmt.executeQuery();
 
-			// 検索結果をコレクションに格納
 			while (r.next()) { // 結果がある場合のみオブジェクトを生成
-				Product product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"));
-				productList.add(product);
+				product = new Product(r.getInt("product_id"),r.getString("product_name"),r.getInt("price"),r.getBoolean("is_sold_out"),r.getString("product_detail"),r.getString("image_url"));
 			}
 			
 			r.close();
 			pStmt.close();
 
 			// 検索結果が格納されたコレクションを返す
-			return productList;
+			return product;
 		}
 		catch (Exception e) {
 			e.printStackTrace();

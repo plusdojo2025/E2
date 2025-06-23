@@ -26,10 +26,13 @@
   <main>
     <div class="menu-container" id="menuArea">
       <c:forEach var="prod" items="${products}">
-        <div class="product">
+        <!-- data-product-id 属性を付与し、クリックでServletへ飛ばす -->
+        <div class="product"
+             data-product-id="${prod.productId}"
+             onclick="location.href='${pageContext.request.contextPath}/ProductServlet?productId=${prod.productId}'">
           <div class="product-picture">
-            <img src="image/${prod.imageUrl}"
-                 alt="${prod.productName}" />
+            <img src="${pageContext.request.contextPath}/image/${prod.imageUrl}"
+                 alt="${prod.productName}"/>
           </div>
           <div class="product-info">
             <p class="product-name">${prod.productName}</p>

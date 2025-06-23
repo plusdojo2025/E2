@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body {
+	overflow-x: hidden;
+}
+
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;

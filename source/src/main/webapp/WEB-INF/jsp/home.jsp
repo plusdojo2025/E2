@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,7 +106,7 @@
 	<footer>
 		<div class="footer-center">
 			<section>
-				<a href="#" class="btn_03">注文確認</a>
+				<a href="<c:url value='/OrderServlet'/>" class="btn_03">注文確認</a>
 			</section>
 		</div>
 	</footer>
