@@ -1,106 +1,118 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ホーム画面</title>
-<link rel="stylesheet" href="css/user.css">
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/user.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/home.css">
+<style>
+.modal-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	background: #fff;
+	padding: 20px;
+	margin: 50px auto;
+	width: 300px;
+	position: relative;
+}
+
+.modal-close {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
+
 	<header>
 		<div class="header-left">
 			<img src="image/Logo.png" height="50" alt="ロゴ">
 		</div>
 		<div class="header-center">
-			<p class="header-p">ホーム画面</p>
+			<p class="header-p">ホーム</p>
 		</div>
 		<div class="header-right">
 			<button class="log">
-				<img src="image/iconLogOut.png" height="35" alt="ロゴ">
+				<img src="image/iconLogOut.png" height="35" alt="ログアウトアイコン">
 			</button>
 		</div>
 	</header>
 
 	<main>
-
-		<div class=regist-position>
-			<button class=regist-button id="openModal">商品追加</button>
+		<div class="regist-position">
+			<button id="openAdd">商品追加</button>
 		</div>
 
-		<!-- 写真ギャラリー部分 -->
 		<div class="photo-gallery">
-			<img src="image/.png" alt="写真1" class="photo" data-photo-id="1">
-			<img src="image/.png" alt="写真2" class="photo" data-photo-id="2">
-			<img src="image/.png" alt="写真3" class="photo"
-				data-photo-id="3">
+			<c:forEach var="p" items="${products}">
+				<img class="photo" src="image/${p.imageUrl}"
+					data-id="${p.productId}" data-name="${p.productName}"
+					data-price="${p.price}" data-detail="${p.productDetail}"
+					data-image="${p.imageUrl}" alt="${p.productName}">
+			</c:forEach>
 		</div>
-
-		<!-- 商品詳細表示用モーダル -->
-		<div id="editModal" class="edit-modal-overlay">
-			<div class="modal-content">
-			<div class="flaot-title">
-			<span class="title">商品情報の編集</span>
-			</div>
-				<span class="modal-close" id="closeEditModal">×</span>
-				<label>
-				 <span class="filelabel" title="ファイルの選択">
-				 <img id="modalImage" class="edit-modal-image" src="" alt="選択された画像"></span>
-					<input type="file" name="datafile" class="filesend" accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
-				</label>
-				<form action="#" method="post">
-
-					<input type="hidden" name="photoId" id="modalPhotoId"> <label
-						for="description">商品名</label><br> <input type="text"
-						name="productName" id="productId"><br>
-					<br> <label for="description">値段</label><br> <input
-						type="text" name="productPrice" id="Price"><br>
-					<br> <label>説明文</label><br> <input type="text"
-						name="productExplanation" id="Explanation"><br>
-					<br>
-					<button type="submit" class="registration">登録</button>
-					<button type="submit" class="delete">削除</button>
-				</form>
-
-			</div>
-		</div>
-		
-		<!-- 商品登録用モーダル -->
-		<div id="addModal" class="add-modal-overlay">
-			<div class="modal-content">
-			<div class="flaot-title">
-			<span>商品の追加</span>
-			</div>
-				<span class="modal-close" id="closeAddModal">×</span> 
-				<label>
-				<span class="filelabel" title="ファイルの選択">
-				 <img id="modalImage" class="add-modal-image" src=""></span>
-					<input type="file" name="datafile" class="filesend" accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
-				</label>
-				<form action="#" method="post">
-
-					 <div class="column">
-					<input type="hidden" name="photoId" id="modalPhotoId">
-					 <label for="description">商品名</label><br>
-					 <input type="text" name="productName" id="productId"><br>
-					 
-					<div id="name-price"><br> <label for="description">値段</label><br> <input
-						type="text" name="productPrice" id="Price"><br></div>
-					 </div>
-						
-					<br> <label>説明文</label><br> <input type="text"
-						name="productExplanation" id="Explanation"><br>
-					<br>
-					<button type="submit" class="registration">登録</button>
-				</form>
-
-			</div>
-		</div>
-		
 	</main>
+
+	<!-- 編集モーダル -->
+	<div id="editModal" class="modal-overlay">
+		<div class="modal-content">
+			<span class="modal-close" id="closeEdit">×</span>
+			<form id="editForm"
+				action="${pageContext.request.contextPath}/productAction"
+				method="post" enctype="multipart/form-data">
+				<input type="hidden" name="actionType" value="update"> <input
+					type="hidden" name="productId" id="editId"> <input
+					type="hidden" name="currentImage" id="currentImage"> <label>画像<br>
+					<img id="editImg" src="" width="100"><br> <input
+					type="file" name="datafile">
+				</label><br> <label>商品名<br> <input type="text"
+					name="productName" id="editName">
+				</label><br> <label>価格<br> <input type="text"
+					name="productPrice" id="editPrice">
+				</label><br> <label> 売り切れ<input type="checkbox"
+					name="isSoldOut" id="editSold">
+				</label><br> <label>説明<br> <textarea name="productDetail"
+						id="editDetail"></textarea>
+				</label><br>
+				<button type="submit">更新</button>
+				<button type="submit" onclick="this.form.actionType.value='delete'">削除</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- 追加モーダル -->
+	<div id="addModal" class="modal-overlay">
+		<div class="modal-content">
+			<span class="modal-close" id="closeAdd">×</span>
+			<form id="addForm"
+				action="${pageContext.request.contextPath}/productAction"
+				method="post" enctype="multipart/form-data">
+				<input type="hidden" name="actionType" value="add"> <label>画像<br>
+				<input type="file" name="datafile"></label><br> <label>商品名<br>
+				<input type="text" name="productName"></label><br> <label>価格<br>
+				<input type="text" name="productPrice"></label><br> <label>売り切れ<input
+					type="checkbox" name="isSoldOut"></label><br> <label>説明<br>
+				<textarea name="productDetail"></textarea></label><br>
+				<button type="submit">追加</button>
+			</form>
+		</div>
+	</div>
+
 	<footer>
 		<div class="footer-center">
 			<section>
@@ -109,8 +121,31 @@
 		</div>
 	</footer>
 
-	<script src="js/home.js"></script>
-	<script src="js/main.js"></script>
+	<script>
+    // モーダル開閉 & フィールド埋め込み
+    document.addEventListener('DOMContentLoaded', () => {
+      const editModal = document.getElementById('editModal');
+      const addModal  = document.getElementById('addModal');
+      const photos    = document.querySelectorAll('.photo');
 
+      photos.forEach(img => {
+        img.addEventListener('click', () => {
+          // 編集モーダルにデータをセット
+          document.getElementById('editId').value       = img.dataset.id;
+          document.getElementById('editName').value     = img.dataset.name;
+          document.getElementById('editPrice').value    = img.dataset.price;
+          document.getElementById('editDetail').value   = img.dataset.detail;
+          document.getElementById('currentImage').value = img.dataset.image;
+          document.getElementById('editImg').src        = 'image/' + img.dataset.image;
+          document.getElementById('editSold').checked   = img.dataset.sold === 'true';
+          editModal.style.display = 'block';
+        });
+      });
+
+      document.getElementById('openAdd').onclick = () => addModal.style.display = 'block';
+      document.getElementById('closeEdit').onclick = () => editModal.style.display = 'none';
+      document.getElementById('closeAdd').onclick  = () => addModal.style.display  = 'none';
+    });
+  </script>
 </body>
 </html>

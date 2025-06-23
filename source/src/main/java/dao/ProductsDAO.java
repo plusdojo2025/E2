@@ -79,7 +79,11 @@ public class ProductsDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "INSERT INTO products (product_name, price, is_sold_out, product_detail, image_url) VALUES (?, ?, ?, ?, ?)";
+		    String sql = """
+		        INSERT INTO products
+		          (product_name, price, is_sold_out, product_detail, image_url)
+		        VALUES (?,?,?,?,?)
+		    """;
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			pStmt.setString(1, productName);
@@ -130,7 +134,11 @@ public class ProductsDAO extends SuperDAO{
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "UPDATE products SET product_name = ?, price = ?, is_sold_out = ?, product_detail = ?, image_url = ? WHERE product_id = ?";
+			String sql = """
+			        UPDATE products
+			           SET product_name = ?, price = ?, is_sold_out = ?, product_detail = ?, image_url = ?
+			         WHERE product_id = ?
+			    """;
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			pStmt.setString(1, productName);
