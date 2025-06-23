@@ -1,45 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>商品一覧</title>
-<link rel="stylesheet" href="css/customer.css" />
-<link rel="stylesheet" href="css/menu.css" />
+  <meta charset="UTF-8">
+  <title>商品一覧</title>
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="css/menu.css" />
 </head>
 <body>
 
-	<header>
-		<div class="header-left">
-			<input type="submit" name="moveMenu" value="MENU" class="mb">
-		</div>
-		<div class="header-center">
-			<p><img src="image/logo3.png" class="img"></p>
-		</div>
-		<div class="header-right"></div>
-	</header>
+  <header>
+    <div class="header-left">
+      <form action="/E2/MenuServlet" method="get">
+        <input type="submit" name="moveMenu" value="MENU" class="mb">
+      </form>
+    </div>
+    <div class="header-center">
+      <p><img src="image/logo3.png" class="img" alt="Logo"></p>
+    </div>
+    <div class="header-right"></div>
+  </header>
 
-	<main>
-		<div class="menu-container" id="menuArea">
-		</div>
-	</main>
+  <main>
+    <div class="menu-container" id="menuArea">
+      <c:forEach var="prod" items="${products}">
+        <div class="product">
+          <div class="product-picture">
+            <img src="image/${prod.imageUrl}"
+                 alt="${prod.productName}" />
+          </div>
+          <div class="product-info">
+            <p class="product-name">${prod.productName}</p>
+            <p class="product-detail">${prod.productDetail}</p>
+            <p class="product-price">${prod.price}円</p>
+          </div>
+        </div>
+      </c:forEach>
+    </div>
+  </main>
 
-	<footer>
-		<div class="footer-left">
-			<button class="fl">
-				<img src="image/iconReturn.png" height="105" alt="戻る">
-			</button>
-		</div>
-		<div class="footer-right">
-			<button class="fr">
-				<img src="image/iconCart.png" height="105" alt="カート">
-			</button>
-		</div>
-	</footer>
-	<script src="js/menu.js"></script>
+  <footer>
+    <div class="footer-left">
+      <button class="fl" onclick="history.back();">
+        <img src="image/iconReturn.png" height="105" alt="戻る">
+      </button>
+    </div>
+    <div class="footer-right">
+      <button class="fr" onclick="location.href='${pageContext.request.contextPath}/cart'">
+        <img src="image/iconCart.png" height="105" alt="カート">
+      </button>
+    </div>
+  </footer>
+
 </body>
 </html>
-
-
