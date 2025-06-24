@@ -29,7 +29,6 @@
 	<main>
 		<div class="menu-container" id="menuArea">
 			<c:forEach var="prod" items="${products}">
-				<!-- data-product-id 属性を付与し、クリックでServletへ飛ばす -->
 				<div class="product" data-product-id="${prod.productId}"
 					onclick="location.href='${pageContext.request.contextPath}/ProductServlet?productId=${prod.productId}'">
 					<div class="product-picture">
@@ -53,13 +52,44 @@
 				<img src="image/iconReturn.png" height="105" alt="戻る">
 			</button>
 		</div>
-		<form class="footer-right"
-			action="${pageContext.request.contextPath}/CartServlet" method="post">
-			<button class="fr" type="submit">
-				<img src="image/iconCart.png" height="105" alt="カート">
+		<div class="footer-right">
+			<button class="fr" id="cartBtn" style="position: relative;">
+				<img src="${pageContext.request.contextPath}/image/iconCart.png"
+					height="105" alt="カート"> <span id="cartCount"
+					style="position: absolute; top: 0.2vw; right: 0.5vw; color: red; font-size: 4vw; font-weight: bold;"></span>
 			</button>
-		</form>
+		</div>
 	</footer>
+	<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    //カート情報を取得（{ productId: quantity, … } のオブジェクト）
+    let cart = {};
+    try {
+      cart = JSON.parse(localStorage.getItem('cart')) || {};
+    } catch (_) {
+      cart = {};
+    }
 
+    //合計数を計算
+    let totalCount = 0;
+    for (let key in cart) {
+      totalCount += Number(cart[key]) || 0;
+    }
+
+    //バッジ要素に反映
+    const badge = document.getElementById('cartCount');
+    if (totalCount > 0) {
+      badge.textContent = totalCount;
+    } else {
+      //0のときは非表示にしたい場合
+      badge.style.display = 'none';
+    }
+  });
+  
+  const cartBtn = document.getElementById("cartBtn");
+  cartBtn.addEventListener('click', () => {
+  	window.location.href = '${pageContext.request.contextPath}/CartServlet';
+  })
+</script>
 </body>
 </html>
