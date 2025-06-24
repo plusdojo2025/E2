@@ -27,6 +27,7 @@ body {
 }
 
 .name {
+	font-weight: bold;
 	text-align: left;
 	margin-bottom: 0;
 	margin-left: 10vw;
@@ -83,4 +84,6 @@ body {
 	height: 10vw;
 	background-color: white;
 	color: black;
+	border: double 1vw #f8bbd0;
+	border-radius: 2vw;
 }
