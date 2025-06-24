@@ -12,6 +12,30 @@ body{
 }
 
 
+.cart-item { 
+	display: flex;
+	margin-bottom: 5vw;
+	padding-bottom: 5vw;
+	padding-left: 5vw; 
+	font-size: 4vw;
+	border-bottom: 1px solid;
+}
+
+.cart-item p{
+	margin: 0;
+}
+
+.cart-img  { 
+	width: 20vw;
+	height: 20vw;
+	border: 1px solid;
+	margin-right: 5vw;
+}
+
+.quantity-controls button { 
+	width: 2rem; 
+}
+    
 .main{
 	position: relative;
 }

@@ -103,11 +103,11 @@
 				action="${pageContext.request.contextPath}/productAction"
 				method="post" enctype="multipart/form-data">
 				<input type="hidden" name="actionType" value="add"> <label>画像<br>
-				<input type="file" name="datafile"></label><br> <label>商品名<br>
-				<input type="text" name="productName"></label><br> <label>価格<br>
-				<input type="text" name="productPrice"></label><br> <label>売り切れ<input
+					<input type="file" name="datafile"></label><br> <label>商品名<br>
+					<input type="text" name="productName"></label><br> <label>価格<br>
+					<input type="text" name="productPrice"></label><br> <label>売り切れ<input
 					type="checkbox" name="isSoldOut"></label><br> <label>説明<br>
-				<textarea name="productDetail"></textarea></label><br>
+					<textarea name="productDetail"></textarea></label><br>
 				<button type="submit">追加</button>
 			</form>
 		</div>
@@ -145,7 +145,24 @@
       document.getElementById('openAdd').onclick = () => addModal.style.display = 'block';
       document.getElementById('closeEdit').onclick = () => editModal.style.display = 'none';
       document.getElementById('closeAdd').onclick  = () => addModal.style.display  = 'none';
+
     });
+    
+
+  	// モーダルの外側をクリックで閉じる
+  	
+		window.addEventListener('click', (event) => {
+		    if (event.target == editModal) {
+		        if (editModal) {
+		        	editModal.style.display = 'none';
+		        }
+		    }
+		    if (event.target == addModal) {
+		        if (addModal) {
+		        	addModal.style.display = 'none';
+		        }
+		    }
+		});
   </script>
 </body>
 </html>

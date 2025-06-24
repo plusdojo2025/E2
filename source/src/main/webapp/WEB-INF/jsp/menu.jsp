@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>商品一覧</title>
-<link rel="stylesheet" href="css/customer.css" />
-<link rel="stylesheet" href="css/menu.css" />
+<link rel="stylesheet" href="<c:url value='/css/customer.css' />">
+<link rel="stylesheet" href="<c:url value='/css/menu.css' />" />
 </head>
 <body>
 
@@ -53,11 +53,15 @@
 			</button>
 		</div>
 		<div class="footer-right">
-			<button class="fr" id="cartBtn" style="position: relative;">
-				<img src="${pageContext.request.contextPath}/image/iconCart.png"
-					height="105" alt="カート"> <span id="cartCount"
+			<form id="gotoCart"
+				action="${pageContext.request.contextPath}/CartServlet" method="get">
+				<input type="hidden" name="cart" id="cartParam" value="" />
+				<button type="button" id="viewCartBtn" class="fr">
+					<img src="<c:url value='/image/iconCart.png'/>" height="105"
+						alt="カート"><span id="cartCount"
 					style="position: absolute; top: 0.2vw; right: 0.5vw; color: red; font-size: 4vw; font-weight: bold;"></span>
-			</button>
+				</button>
+			</form>
 		</div>
 	</footer>
 	<script>
@@ -86,10 +90,14 @@
     }
   });
   
-  const cartBtn = document.getElementById("cartBtn");
-  cartBtn.addEventListener('click', () => {
-  	window.location.href = '${pageContext.request.contextPath}/CartServlet';
-  })
+  document.getElementById('viewCartBtn').addEventListener('click', () => {
+	  // localStorage から cart JSON を取得
+	  let cart = localStorage.getItem('cart') || '{}';
+	  // hidden input にセット
+	  document.getElementById('cartParam').value = cart;
+	  // フォーム送信
+	  document.getElementById('gotoCart').submit();
+	});
 </script>
 </body>
 </html>

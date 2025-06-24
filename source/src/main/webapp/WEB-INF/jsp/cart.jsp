@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="css/cart.css">
-<link rel="stylesheet" href="css/customer.css">
+<title>カート</title>
+<link rel="stylesheet" href="<c:url value='/css/customer.css' />">
+<link rel="stylesheet" href="<c:url value='/css/cart.css' />">
 </head>
-
 <body>
-
 	<header>
 		<div class="header-left">
 			<form action="${pageContext.request.contextPath}/MenuServlet"
@@ -25,65 +24,93 @@
 	</header>
 
 	<main class="main">
-		<div class="product-infomation">
-			<span><img src="image/Logo.png" alt="商品画像" class="product-img"
-				align="top"></span> <span class="cart-product-display">商品名</span>
+    <c:choose>
+      <c:when test="${empty cartItems}">
+        <p>カートに商品が入っていません。</p>
+      </c:when>
+      <c:otherwise>
+        <c:forEach var="item" items="${cartItems}">
+          <div class="cart-item"
+               data-id="${item.product.productId}"
+               data-price="${item.product.price}">
+            <img class="cart-img"
+                 src="<c:url value='/image/${item.product.imageUrl}'/>"
+                 alt="${item.product.productName}" />
 
-		</div>
+            <div>
+              <p class="name">${item.product.productName}</p>
+              <p>
+                単価：${item.product.price}円<br/>
+                小計：<span id="subtotal-${item.product.productId}">
+                  ${item.product.price * item.quantity}
+                </span>円
+              </p>
+              <div class="quantity-controls">
+                <button type="button"
+                        onclick="changeQty(${item.product.productId}, -1)">－</button>
+                <span id="qty-${item.product.productId}">
+                  ${item.quantity}
+                </span>
+                <button type="button"
+                        onclick="changeQty(${item.product.productId}, 1)">＋</button>
+              </div>
+            </div>
+          </div>
+        </c:forEach>
 
-		<div id="btn-wrapper">
-			<div class="detail-btn">
-				<button onclick="changeNum(-1)">-</button>
-				<span id="piece">1</span>
-				<button onclick="changeNum(1)">+</button>
-				<span class="product-sum">商品価格</span>
-			</div>
-		</div>
-		<br>
-
-		<div class="product-infomation">
-			<span><img src="image/Logo.png" alt="商品画像" class="product-img"
-				align="top"></span> <span class="cart-product-display">商品名</span>
-		</div>
-
-		<div id="btn-wrapper">
-			<div class="detail-btn">
-				<button onclick="changeNum(-1)">-</button>
-				<span id="piece">1</span>
-				<button onclick="changeNum(1)">+</button>
-				<span class="product-sum">商品価格</span>
-			</div>
-		</div>
-		<br>
-
-		<div class="sum-price">
-			<p>
-				合計&emsp;&emsp;&yen;&nbsp;<span class="total-monetary">0000</span>
-			</p>
-		</div>
-		<form action="${pageContext.request.contextPath}/HandedServlet"
-			method="post">
-			<div class="pay-ment">
-				<a><input type="submit" value="支払画面へ"></a>
-			</div>
-		</form>
-	</main>
+        <!-- ここを HandedServlet に POST -->
+        <form id="checkoutForm"
+              action="<c:url value='/HandedServlet'/>"
+              method="post">
+          <input type="hidden" name="cart" id="cartData" value=""/>
+          <div style="margin-top: 2rem;">
+            <input type="submit" value="支払画面へ" onclick="localStorage.clear();"/>
+          </div>
+        </form>
+      </c:otherwise>
+    </c:choose>
+  </main>
 
 	<footer>
 		<div class="footer-left">
-			<button class="fl">
+			<button class="fl" onclick="history.back();">
 				<img src="image/iconReturn.png" height="105" alt="戻る">
 			</button>
 		</div>
-		<div class="footer-right">
-			<button class="fr">
-				<img src="image/iconCart.png" height="105" alt="カート">
-			</button>
-		</div>
 	</footer>
-
 	<script>
-		'use strict'
-	</script>
+    // localStorage cart の読み書きユーティリティ
+    function loadCart() {
+      try { return JSON.parse(localStorage.getItem('cart')) || {}; }
+      catch { return {}; }
+    }
+    function saveCart(cart) {
+    	  const el = document.getElementById('cartData');
+    	  if (el) el.value = JSON.stringify(cart);
+    	  localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // 数量変更
+    function changeQty(id, delta) {
+      const qtyEl = document.getElementById('qty-' + id);
+      let qty = parseInt(qtyEl.textContent, 10) || 0;
+      qty = Math.max(0, Math.min(99, qty + delta));
+      qtyEl.textContent = qty;
+
+      const price = Number(
+        document.querySelector(`.cart-item[data-id='${id}']`).dataset.price
+      );
+      document.getElementById('subtotal-' + id).textContent = price * qty;
+
+      const cart = loadCart();
+      cart[id] = qty;
+      saveCart(cart);
+    }
+
+    // 初期表示時に hidden input にセット
+    document.addEventListener('DOMContentLoaded', () => {
+      saveCart(loadCart());
+    });
+  </script>
 </body>
 </html>

@@ -42,7 +42,8 @@
 		<div class="detail">
 			<span class="total"> 合計金額:<a id="price">${product.price}</a>円
 			</span> <span class="detail-btn">
-				<button type="button" id="decrease" onclick="changeNum(-1)">-</button> <span id="piece">1</span>
+				<button type="button" id="decrease" onclick="changeNum(-1)">-</button>
+				<span id="piece">1</span>
 				<button type="button" id="increase" onclick="changeNum(1)">+</button>
 			</span>
 		</div>
@@ -57,13 +58,17 @@
 				<img src="image/iconReturn.png" height="105" alt="戻る">
 			</button>
 		</div>
-		<form class="footer-right"
-			action="${pageContext.request.contextPath}/CartServlet" method="post">
-			<button class="fr" id="cartBtn" style="position: relative;">
-				<img src="image/iconCart.png" height="105" alt="カート"><span id="cartCount"
-					style="position: absolute; top: 0.2vw; right: 0.5vw; color: red; font-size: 4vw; font-weight: bold;"></span>
-			</button>
-		</form>
+		<div class="footer-right">
+			<form id="gotoCart"
+				action="${pageContext.request.contextPath}/CartServlet" method="get">
+				<input type="hidden" name="cart" id="cartParam" value="" />
+				<button type="button" id="viewCartBtn" class="fr">
+					<img src="<c:url value='/image/iconCart.png'/>" height="105"
+						alt="カート"><span id="cartCount"
+						style="position: absolute; top: 0.2vw; right: 0.5vw; color: red; font-size: 4vw; font-weight: bold;"></span>
+				</button>
+			</form>
+		</div>
 	</footer>
 
 	<script>
@@ -141,10 +146,14 @@
 	        }
 	      });
 	    
-	    const cartBtn = document.getElementById("cartBtn");
-	    cartBtn.addEventListener('click', () => {
-	    	window.location.href = '${pageContext.request.contextPath}/CartServlet';
-	    })
+		  document.getElementById('viewCartBtn').addEventListener('click', () => {
+			  // localStorage から cart JSON を取得
+			  let cart = localStorage.getItem('cart') || '{}';
+			  // hidden input にセット
+			  document.getElementById('cartParam').value = cart;
+			  // フォーム送信
+			  document.getElementById('gotoCart').submit();
+			});
 	</script>
 </body>
 </html>
