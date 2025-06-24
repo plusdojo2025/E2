@@ -12,7 +12,6 @@
 <body>
 
 	<header>
-		<img src="image/crepe.png">
 		<div class="header-left">
 			<form action="${pageContext.request.contextPath}/MenuServlet"
 				method="get">
@@ -20,7 +19,7 @@
 			</form>
 		</div>
 		<div class="header-center">
-			<p>○○店</p>
+			<p><img src="image/logo3.png" class="img"></p>
 		</div>
 		<div class="header-right"></div>
 	</header>

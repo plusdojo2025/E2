@@ -5,6 +5,10 @@ body{
 	margin: 0;
 	font-size: 6vw;
 	margin-top: 4vw;
+	background-color: #faf2d6;
+	background-image: radial-gradient(circle, #bacfff80 1vw, transparent 1vw);
+	background-position: 0 0;
+	background-size: 20vw 20vw;
 }
 
 
@@ -65,19 +69,17 @@ body{
 .total-monetary{
 	border-bottom: 1px solid black;
 }
-button{
+
+.detail-btn button{
+	border-width: 0.5vw;
+	border-color: #008080;
+	background-color: white;
 	border-radius: 5vw;
 	width: 7vw;
 	height: 7vw;
 	font-size: 5vw;
 	text-decoration: none;
 	color: #008080;
-}
-
-.detail-btn button{	
-	border-width: 0.5vw;
-	border-color: #008080;
-	background-color: white;
 }
 
 #piece{
