@@ -14,19 +14,22 @@ body {
 .number{
 	text-align: center;
 }
+
+#messageArea{
+	border: 1px solid;
+	background-color: #FFFFE0;
+	width: 70vw;
+	margin: auto;
+}
+
 .price{
 	border: 1px solid black;
 	padding:0 10vw;
 }
 
 /*モーダル内のテキストのレイアウト*/
-.message{
-	width: 80vw;
-	height: 50vw;
-	margin: auto auto auto auto;
-	padding-top: 4vw; 
-	padding-bottom: 2vw;
-	border: 1px solid black;
+#message{
+	font-size: 5vw;
 	text-align: center;
 }
 /*デフォルトメッセージのレイアウト*/

@@ -115,7 +115,7 @@
         params.append('orderId', orderId);
         params.append('flag', flag);
 
-        fetch(`/E2/toggleFlag`, {
+        fetch(contextPath+`/toggleFlag`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

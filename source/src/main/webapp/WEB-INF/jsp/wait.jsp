@@ -25,25 +25,23 @@
 
 	<main>
 
-		<div id="messageDefaultNumber">
+		<div id="divArea">
 			<div id="number" class="number">
 				<p>ご注文番号</p>
 				<h1>${orderId}</h1>
 			</div>
-			<br>
-			<div id="messageDefault">
+			<div id="messageArea">
 				<div class="sum-price">
 					<p>お支払金額</p>
 					<span class="price">&yen;${totalAmount}</span>
 				</div>
 				<div class="message-top">
-					<p>この画面を店員にお見せください</p>
+					<p id="message">この画面を店員に<br>お見せください</p>
 				</div>
 			</div>
 		</div>
-		<button id="modal(1)">open</button>
 
-		<!--モーダル1つ目の中身-->
+		<!--モーダル1つ目の中身
 		<div id="modalFirst" class="modal modal-hidden modal-first">
 			<div class="modal-container">
 				<div class="message">
@@ -58,7 +56,7 @@
 			</div>
 		</div>
 
-		<!--モーダル2つ目の中身-->
+		<!--モーダル2つ目の中身
 		<div id="modalSecond" class="modal modal-second">
 			<div class="modal-container">
 				<div class="message">
@@ -70,7 +68,7 @@
 			</div>
 		</div>
 
-		<!--モーダル3つ目の中身-->
+		<!--モーダル3つ目の中身
 		<div id="modalThird" class="modal modal-third">
 			<div class="modal-container">
 				<div class="message">
@@ -88,8 +86,8 @@
 				</div>
 			</div>
 		</div>
+-->
 	</main>
-
 	<footer>
 		<div class="footer-left">
 		</div>
@@ -97,6 +95,6 @@
 		</div>
 	</footer>
 
-	<script src="js/handed.js"></script>
+	<script></script>
 </body>
 </html>
