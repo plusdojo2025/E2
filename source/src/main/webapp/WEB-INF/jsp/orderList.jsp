@@ -108,21 +108,19 @@
         const orderId = row.dataset.orderId;
         const flag    = cell.dataset.flag;
 
-        // ✅ 値の確認ログ（任意）
         console.log('orderId:', orderId);
         console.log('flag:', flag);
 
-        // ✅ 安全なURLエンコード形式で送信
         const params = new URLSearchParams();
         params.append('orderId', orderId);
         params.append('flag', flag);
 
-        fetch(`/e2/toggleFlag`, {
+        fetch(`/E2/toggleFlag`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
-          body: params
+          body: params.toString()
         })
         .then(res => res.json())
         .then(json => {

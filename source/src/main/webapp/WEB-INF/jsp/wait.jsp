@@ -27,23 +27,17 @@
 
 		<div id="messageDefaultNumber">
 			<div id="number" class="number">
-				<p>
-					ご注文番号&emsp; <span>000</span>
-				</p>
+				<p>ご注文番号</p>
+				<h1>${orderId}</h1>
 			</div>
 			<br>
 			<div id="messageDefault">
 				<div class="sum-price">
 					<p>お支払金額</p>
-					<span class="price">&yen;0000</span>
+					<span class="price">&yen;${totalAmount}</span>
 				</div>
 				<div class="message-top">
-					<p>
-						お会計の準備が出来ましたら、<br> この画面を店員にお見せください。
-					</p>
-				</div>
-				<div class="status">
-					<span>未清算</span>
+					<p>この画面を店員にお見せください</p>
 				</div>
 			</div>
 		</div>

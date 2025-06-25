@@ -62,11 +62,11 @@ public class HandedServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             req.setCharacterEncoding("UTF-8");
-            // 1) hidden フィールドから cart JSON を取得
+            // hidden フィールドから cart JSON を取得
             String cartJson = req.getParameter("cart");
             Map<Integer,Integer> cart = parseCart(cartJson);
 
-            // 2) 合計金額を計算
+            // 合計金額を計算
             int total = 0;
             ProductsDAO pDao = new ProductsDAO();
             for (Map.Entry<Integer,Integer> e : cart.entrySet()) {
@@ -74,20 +74,20 @@ public class HandedServlet extends HttpServlet {
                 total += p.getPrice() * e.getValue();
             }
 
-            // 3) 注文コード生成 (例: 20250620-123045)
+            // 注文コード生成 (例: 20250620-123045)
             String code = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
 
-            // 4) orders テーブルに登録 → orderId を取得
+            // orders テーブルに登録 → orderId を取得
             int orderId = insertOrder(code, total);
 
-            // 5) ordered_products テーブルに登録
+            // ordered_products テーブルに登録
             OrderProductsDAO opDao = new OrderProductsDAO();
             for (Map.Entry<Integer,Integer> e : cart.entrySet()) {
                 opDao.insert(orderId, e.getKey(), e.getValue());
             }
 
-            // 6) 待機画面へフォワード
-            req.setAttribute("orderCode", code);
+            // 待機画面へフォワード
+            req.setAttribute("orderId", orderId);
             req.setAttribute("totalAmount", total);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/wait.jsp");
             dispatcher.forward(req, resp);
