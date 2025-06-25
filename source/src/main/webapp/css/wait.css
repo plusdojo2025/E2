@@ -9,7 +9,7 @@ body {
 
 .wait-body{	
 	margin: 0;
-	font-size: 6vw;
+	font-size: 5vw;
 }
 .number{
 	text-align: center;
@@ -29,7 +29,7 @@ body {
 
 /*モーダル内のテキストのレイアウト*/
 #message{
-	font-size: 5vw;
+	font-size: 4vw;
 	text-align: center;
 }
 /*デフォルトメッセージのレイアウト*/

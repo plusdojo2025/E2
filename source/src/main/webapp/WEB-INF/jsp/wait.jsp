@@ -14,11 +14,12 @@
 	<header>
 		<div class="header-left">
 			<form action="${pageContext.request.contextPath}/MenuServlet"
-				method="get">
-			</form>
+				method="get"></form>
 		</div>
 		<div class="header-center">
-			<p><img src="image/logo3.png" class="img"></p>
+			<p>
+				<img src="image/logo3.png" class="img">
+			</p>
 		</div>
 		<div class="header-right"></div>
 	</header>
@@ -36,65 +37,80 @@
 					<span class="price">&yen;${totalAmount}</span>
 				</div>
 				<div class="message-top">
-					<p id="message">この画面を店員に<br>お見せください</p>
+					<p id="message">
+						この画面を店員に<br>お見せください
+					</p>
 				</div>
 			</div>
 		</div>
 
-		<!--モーダル1つ目の中身
-		<div id="modalFirst" class="modal modal-hidden modal-first">
-			<div class="modal-container">
-				<div class="message">
-					<div id="text-message">
-						<button id="modal(2)">モーダルopen</button>
-						ご注文が完了しました。<br> <br> 商品の準備が整うまで、<br> いましばらくお待ちください。
-					</div>
-				</div>
-			</div>
-			<div class="status">
-				<span>清算済</span>
-			</div>
-		</div>
-
-		<!--モーダル2つ目の中身
-		<div id="modalSecond" class="modal modal-second">
-			<div class="modal-container">
-				<div class="message">
-					<div id="text-message">
-						<button id="modal(3)">モーダルopen</button>
-						商品が完成いたしました。<br> <br>商品提供口までお越しください。
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!--モーダル3つ目の中身
-		<div id="modalThird" class="modal modal-third">
-			<div class="modal-container">
-				<div class="message">
-
-					<div id="text-message">
-						<strong>お買い上げいただき<br> ありがとうございました！
-						</strong>
-						<div>
-							<br>またのご利用を<br> お待ちしております。
-						</div>
-					</div>
-					<div id="modal-close-container">
-						<span id="modalClose">OK</span>
-					</div>
-				</div>
-			</div>
-		</div>
--->
 	</main>
 	<footer>
-		<div class="footer-left">
-		</div>
-		<div class="footer-right">
-		</div>
+		<div class="footer-left"></div>
+		<div class="footer-right"></div>
 	</footer>
 
-	<script></script>
+	<script>
+  const orderId = ${orderId};
+  const contextPath = '${pageContext.request.contextPath}';
+
+  // サーバーに orderId を送り、int[] flags を受け取る
+  function fetchFlags() {
+    return fetch(contextPath + `/HandedUpdate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+      body: new URLSearchParams({ orderId })
+    })
+    .then(resp => resp.json());
+  }
+
+  // 5秒ごとにポーリングして、受渡フラグだけでなく他のフラグも確認可
+  function pollFlags() {
+    fetchFlags().then(json => {
+   	if (!json.success) {
+           console.error('サーバーエラー:', json.error);
+           return;
+         }
+         // JSON に必ず flags プロパティがある想定だが……
+         const flags = json.flags;
+         if (!Array.isArray(flags) || flags.length < 3) {
+           console.error('不正なflags:', flags);
+           return;
+         }
+         const [isPaid, isComplete, isHanded] = flags;
+         console.log(isPaid, isComplete, isHanded);
+         
+      // すべて0なら初期表示
+      if (isPaid === 1 && isComplete === 1 && isHanded ===1) {
+    	document.getElementById('message').innerHTML = 'この画面を店員に<br>お見せください';
+      }
+         
+      // 支払済みならメッセージを更新
+      if (isPaid === 1) {
+        document.getElementById('message').innerHTML = 'お支払いが完了しました';
+      }
+
+      // 作成済み（complete）なら次のメッセージ
+      if (isComplete === 1) {
+        document.getElementById('message').innerHTML = '商品が準備中です';
+      }
+
+      // 受渡済みなら最終メッセージ＆ポーリング停止
+      if (isHanded === 1) {
+        document.getElementById('message').innerHTML =
+          '商品が完成いたしました！<br>カウンターまでお越しください';
+      }
+    })
+    .catch(err => console.error('通信エラー:', err));
+  }
+
+  let pollId;
+  document.addEventListener('DOMContentLoaded', () => {
+    // 初回チェック
+    pollFlags();
+    // 以降5秒ごとにチェック
+    pollId = setInterval(pollFlags, 5000);
+  });
+</script>
 </body>
 </html>

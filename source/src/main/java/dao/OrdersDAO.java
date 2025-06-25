@@ -111,50 +111,30 @@ public class OrdersDAO extends SuperDAO{
 		return result;
 	}
 	
-	public int[] getFlag(int orderId){
-
-		Connection conn = null;
-
-		try {
-			// JDBCドライバ読み込み
-			Class.forName("com.mysql.cj.jdbc.Driver");
-
-			// データベース接続
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e2?"
+	public int[] getFlag(int orderId) {
+	    String sql = "SELECT is_paid, is_complete, is_handed FROM orders WHERE order_id = ?";
+	    try (
+	        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/e2?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
-
-			// SQL作成
-			String sql = "SELECT is_paid is_complete is_handed FROM orders WHERE order_id = ?";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-			
-			pStmt.setInt(1, orderId);
-			
-			// SQLを実行して検索結果を取得
-			ResultSet r = pStmt.executeQuery();
-
-			int[] flagList = {r.getInt("is_paid"),r.getInt("is_complete"),r.getInt("is_handed")};
-			
-			r.close();
-			pStmt.close();
-
-			// 検索結果が格納されたコレクションを返す
-			return flagList;
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-		finally {
-			// データベース切断
-			if (conn != null) {
-				try {
-					conn.close();
-				}
-				catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
+	        PreparedStatement ps = conn.prepareStatement(sql)
+	    ) {
+	        ps.setInt(1, orderId);
+	        try (ResultSet rs = ps.executeQuery()) {
+	            if (rs.next()) {
+	                int paid     = rs.getInt("is_paid");
+	                int complete = rs.getInt("is_complete");
+	                int handed   = rs.getInt("is_handed");
+	                return new int[]{ paid, complete, handed };
+	            } else {
+	                // 該当 order_id がない場合はデフォルト返却
+	                return new int[]{ 0, 0, 0 };
+	            }
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        // エラー時にも必ず長さ3の配列を返すか null を扱うように呼び出し側で対応
+	        return new int[]{ 0, 0, 0 };
+	    }
 	}
 }
