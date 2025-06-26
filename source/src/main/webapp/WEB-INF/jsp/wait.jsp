@@ -93,7 +93,7 @@
 
       // 作成済み（complete）なら次のメッセージ
       if (isComplete === 1) {
-        document.getElementById('message').innerHTML = '商品が準備中です';
+        document.getElementById('message').innerHTML = '商品を準備中です';
       }
 
       // 受渡済みなら最終メッセージ＆ポーリング停止

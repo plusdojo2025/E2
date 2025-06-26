@@ -26,7 +26,7 @@
 	<main class="main">
     <c:choose>
       <c:when test="${empty cartItems}">
-        <p>カートに商品が入っていません。</p>
+        <p id="emp-msg">カートに商品が<br>入っていません</p>
       </c:when>
       <c:otherwise>
         <c:forEach var="item" items="${cartItems}">
@@ -40,7 +40,7 @@
             <div>
               <p class="name">${item.product.productName}</p>
               <p>
-                単価：${item.product.price}円<br/>
+                単価： ${item.product.price}円<br/>
                 小計：<span id="subtotal-${item.product.productId}">
                   ${item.product.price * item.quantity}
                 </span>円
