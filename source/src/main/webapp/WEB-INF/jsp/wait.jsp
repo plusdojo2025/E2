@@ -71,9 +71,9 @@
   function comp(){
       document.getElementById('message').innerHTML =
         'ご購入ありがとうございます！<br>またお越しください';
-      document.getElementById('compBtn').style = 'none';
-      document.getElementById('compArea').style = 'none';
-      document.getElementById('menuBtn').style = 'block';
+      document.getElementById('compBtn').style.display = 'none';
+      document.getElementById('compArea').style.display = 'none';
+      document.getElementById('menuBtn').style.display = 'block';
       clearInterval(pollId);
   }
 

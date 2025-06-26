@@ -46,6 +46,7 @@ public class ProductActionServlet extends HttpServlet {
 
             } else if ("delete".equals(action)) {
                 int id = Integer.parseInt(req.getParameter("productId"));
+                System.out.println(id);
                 dao.delete(id);
             }
         } catch (Exception e) {
