@@ -53,7 +53,8 @@
 	<script>
   const orderId = ${orderId};
   const contextPath = '${pageContext.request.contextPath}';
-
+  localStorage.clear();
+  
   // サーバーに orderId を送り、int[] flags を受け取る
   function fetchFlags() {
     return fetch(contextPath + `/HandedUpdate`, {

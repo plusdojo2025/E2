@@ -61,10 +61,10 @@
         <!-- ここを HandedServlet に POST -->
         <form id="checkoutForm"
               action="<c:url value='/HandedServlet'/>"
-              method="post">
+              method="post" onsubmit="return checkTotalQty()">
           <input type="hidden" name="cart" id="cartData" value=""/>
           <div style="margin-top: 2rem;">
-            <input type="submit" value="支払画面へ" onclick="localStorage.clear();"/>
+            <input type="submit" value="支払画面へ"/>
           </div>
         </form>
       </c:otherwise>
@@ -79,7 +79,7 @@
 		</div>
 	</footer>
 	<script>
-    // localStorage cart の読み書きユーティリティ
+    // localStorage cart の読み書き
     function loadCart() {
       try { return JSON.parse(localStorage.getItem('cart')) || {}; }
       catch { return {}; }
@@ -94,17 +94,31 @@
     function changeQty(id, delta) {
       const qtyEl = document.getElementById('qty-' + id);
       let qty = parseInt(qtyEl.textContent, 10) || 0;
-      qty = Math.max(0, Math.min(99, qty + delta));
+      qty = Math.max(0, Math.min(10, qty + delta));
       qtyEl.textContent = qty;
 
-      const price = Number(
-        document.querySelector(`.cart-item[data-id='${id}']`).dataset.price
-      );
+      const container = document.querySelector('.cart-item[data-id="' + id + '"]');
+      const price = parseInt(container.dataset.price, 10);
       document.getElementById('subtotal-' + id).textContent = price * qty;
 
       const cart = loadCart();
       cart[id] = qty;
       saveCart(cart);
+    }
+    
+    // 支払画面へ遷移する前に呼ぶチェック関数
+    function checkTotalQty() {
+      const cart = loadCart();
+      // cart の各 productId に対する数量を足し合わせる
+      const total = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+      if (total > 10) {
+        alert("同時に注文できるのは10個までです。");
+        return false;
+      }else if(total <= 0){
+    	alert("商品を一つ以上選択してください");
+        return false;
+      }
+      return true;
     }
 
     // 初期表示時に hidden input にセット

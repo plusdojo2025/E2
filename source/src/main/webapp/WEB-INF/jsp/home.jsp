@@ -44,7 +44,7 @@
 			<img src="image/Logo.png" height="50" alt="ロゴ">
 		</div>
 		<div class="header-center">
-			<p class="header-p">ホーム</p>
+			<h1 class="header-p">OrderMaker</h1>
 		</div>
 		<div class="header-right">
 			<button class="log">

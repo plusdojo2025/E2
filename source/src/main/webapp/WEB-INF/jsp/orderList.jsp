@@ -28,7 +28,7 @@
 			<img src="image/Logo.png" height="50" alt="ロゴ">
 		</div>
 		<div class="header-center">
-			<p class="header-p">注文確認</p>
+			<h1 class="header-p">OrderMaker</h1>
 		</div>
 		<div class="header-right">
 			<button class="log">
@@ -39,7 +39,7 @@
 	<!-- 全件表示トグル -->
 
 	<div class="order-container">
-		<label> <input type="checkbox" id="showAll" checked /> <span
+		<label> <input type="checkbox" id="showAll" /> <span
 			class="check-text">全件表示</span>
 		</label>
 		<table class="order-list" id="orderTable" border="1" cellpadding="5"
@@ -66,7 +66,7 @@
 						<td class="flag-cell" data-flag="handed">${order.handed ? "◯" : "✕"}</td>
 						<c:forEach var="p" items="${productNames}">
 							<td><c:out
-									value="${order.productQuantities[p] != null
+									value="${order.productQuantities[p] != null && order.productQuantities[p] != 0
                             ? order.productQuantities[p] : ''}" />
 							</td>
 						</c:forEach>
@@ -85,11 +85,24 @@
 	</footer>
 <script>
   const contextPath = '${pageContext.request.contextPath}';
-
+  
+  window.onload = function(){
+	  window.setInterval(function(){
+		  localStorage.setItem("isCheck",document.getElementById("showAll").checked);
+		  window.location.reload();
+	  }, 5000);
+  }
+  
   document.addEventListener('DOMContentLoaded', () => {
     const showAll = document.getElementById('showAll');
     const table   = document.getElementById('orderTable');
 
+	  if(localStorage.getItem("isCheck") === "true"){
+		  showAll.checked = true;
+	  }else{
+		  showAll.checked = false;
+	  }
+	  
     function applyFilter() {
       const show = showAll.checked;
       table.querySelectorAll('tbody tr').forEach(row => {

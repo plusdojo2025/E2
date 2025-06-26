@@ -107,9 +107,27 @@
 	          cart = {};
 	        }
 
+	        //合計数を計算
+	        let totalCount = 0;
+	        for (let key in cart) {
+	          totalCount += Number(cart[key]) || 0;
+	        }
+	        console.log(totalCount + qty);
+	        if (totalCount + qty > 10) {
+	          alert("同時に注文できるのは10個までです");
+	          return;
+	        }
+	        
 	        //同じ商品があれば数量を加算、なければ新規設定
 	        if (cart[productId]) {
-	          cart[productId] += qty;
+	        	const existingQty = cart[productId] || 0;
+		        // 追加後の合計が 10 を超えていないかチェック
+		        if (existingQty + qty > 10) {
+		          alert("同時に注文できるのは10個までです");
+		          return;
+		        }
+		        // 問題なければ合計数を設定
+		        cart[productId] = existingQty + qty;
 	        } else {
 	          cart[productId] = qty;
 	        }

@@ -24,8 +24,6 @@ public class OrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             OrderListDAO dao = new OrderListDAO();
-            // すべての注文＋商品数を取得
-            List<OrderDTO> allOrders = dao.fetchOrdersWithProducts();
 
             List<OrderDTO> orders = dao.fetchOrdersWithProducts();
 
