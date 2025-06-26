@@ -55,7 +55,7 @@
 
 	<main>
 		<div class="regist-position">
-			<button id="openAdd">商品追加</button>
+			<a id="openAdd" class="btn_03">商品追加</a>
 		</div>
 
 		<div class="photo-gallery">

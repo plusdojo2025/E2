@@ -14,7 +14,7 @@
 	<header>
 		<div class="header-left">
 			<form action="${pageContext.request.contextPath}/MenuServlet"
-				method="get"></form>
+				method="get"><input type="submit" name="moveMenu" value="MENU" class="mb" id="menuBtn"></form>
 		</div>
 		<div class="header-center">
 			<p>
@@ -41,6 +41,9 @@
 						この画面を店員に<br>お見せください
 					</p>
 				</div>
+				<div class="comp" id="compArea">
+					<button id="compBtn" onclick="comp()">受取完了</button>
+				</div>
 			</div>
 		</div>
 
@@ -64,6 +67,15 @@
     })
     .then(resp => resp.json());
   }
+  
+  function comp(){
+      document.getElementById('message').innerHTML =
+        'ご購入ありがとうございます！<br>またお越しください';
+      document.getElementById('compBtn').style = 'none';
+      document.getElementById('compArea').style = 'none';
+      document.getElementById('menuBtn').style = 'block';
+      clearInterval(pollId);
+  }
 
   // 5秒ごとにポーリングして、受渡フラグだけでなく他のフラグも確認可
   function pollFlags() {
@@ -79,10 +91,9 @@
            return;
          }
          const [isPaid, isComplete, isHanded] = flags;
-         console.log(isPaid, isComplete, isHanded);
          
       // すべて0なら初期表示
-      if (isPaid === 1 && isComplete === 1 && isHanded ===1) {
+      if (isPaid === 0 && isComplete === 0 && isHanded === 0) {
     	document.getElementById('message').innerHTML = 'この画面を店員に<br>お見せください';
       }
          
@@ -96,10 +107,12 @@
         document.getElementById('message').innerHTML = '商品を準備中です';
       }
 
-      // 受渡済みなら最終メッセージ＆ポーリング停止
+      // 受渡済みなら最終メッセージ
       if (isHanded === 1) {
         document.getElementById('message').innerHTML =
           '商品が完成いたしました！<br>カウンターまでお越しください';
+        document.getElementById('compBtn').style.display = 'block';
+        document.getElementById('compArea').style.display = 'block';
       }
     })
     .catch(err => console.error('通信エラー:', err));

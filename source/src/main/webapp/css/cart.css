@@ -62,19 +62,21 @@ body{
 	font-size: 5vw;
 	position: relative;
 	bottom: 3vw;
-	}
+}
 
 .product-sum {
 	font-size: 4vw;
 }
 
 .pay-ment{
+	font-size: 5vw;
+	width: 30vw;
 	display: flex;
 	justify-content: center;
 	padding-bottom: -10vw;
   position: fixed;
-  bottom: 23vw;/*自分が固定したい位置(例は上から0pxの位置)*/
-  left: 25vw;/*自分が固定したい位置(例は左から10pxの位置)*/
+  bottom: 25vw;/*自分が固定したい位置(例は上から0pxの位置)*/
+  right: 9vw;/*自分が固定したい位置(例は左から10pxの位置)*/
 }
 .pay-ment input{
 	font-size: 4vw;

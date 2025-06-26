@@ -41,7 +41,7 @@
               <p class="name">${item.product.productName}</p>
               <p>
                 単価： ${item.product.price}円<br/>
-                小計：<span id="subtotal-${item.product.productId}">
+                小計： <span id="subtotal-${item.product.productId}">
                   ${item.product.price * item.quantity}
                 </span>円
               </p>
@@ -63,7 +63,7 @@
               action="<c:url value='/HandedServlet'/>"
               method="post" onsubmit="return checkTotalQty()">
           <input type="hidden" name="cart" id="cartData" value=""/>
-          <div style="margin-top: 2rem;">
+          <div class="pay-ment" style="margin-top: 2rem;">
             <input type="submit" value="支払画面へ"/>
           </div>
         </form>

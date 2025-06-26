@@ -14,6 +14,13 @@
   	background: #0b76a0;
 }
 
+#openAdd{
+	position: fixed;
+	bottom: 15vh;
+	right: 5vw;
+	width: 15vw;
+}
+
 /* 写真の場所のとこ全体の調整をするやーつ */
 .photo-gallery {
     display: flex;              /* 横並びに */

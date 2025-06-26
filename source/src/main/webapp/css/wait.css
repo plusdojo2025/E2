@@ -7,6 +7,10 @@ body {
 	background-size: 20vw 20vw;
 }
 
+.mb{
+	display: none;
+}
+
 .wait-body{	
 	margin: 0;
 	font-size: 5vw;
@@ -98,3 +102,21 @@ body {
 	margin-bottom: 5vw;
 }
 
+.comp{
+	margin: auto;
+	margin-bottom: 5vw;
+	font-size: 5vw;
+	width: 30vw;
+	display: flex;
+	justify-content: center;
+	padding-bottom: -10vw;
+	display: none;
+}
+#compBtn{
+	font-size: 4vw;
+	width: 30vw;
+	height: 10vw;
+	background-color: white;
+	color: black;
+	display: none;
+}
