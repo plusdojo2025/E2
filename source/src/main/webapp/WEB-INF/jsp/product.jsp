@@ -54,7 +54,7 @@
 
 	<footer>
 		<div class="footer-left">
-			<button class="fl">
+			<button class="fl" onclick="history.back();">
 				<img src="image/iconReturn.png" height="105" alt="戻る">
 			</button>
 		</div>
